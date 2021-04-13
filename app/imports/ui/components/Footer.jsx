@@ -8,12 +8,13 @@ class Footer extends React.Component {
       <footer>
         <div style={divStyle} className="ui center aligned container" color='white'>
           <hr />
-          Contact Budget Munchies at nkimoto@hawaii.edu<br />
+          Budget Munchies is a project by students, for students!<br/>
+          Contact Budget Munchies at budgetmunchies@hawaii.edu<br />
           Sign up to get our email updates!<br />
           <Input
             action={ { color: 'black', content: 'Join' } }
             placeholder="Enter Email Address"/>
-          <a href="http://ics-software-engineering.github.io/meteor-application-template-react">Template Home Page</a>
+          <a href="https://budget-munchies.github.io">Budget Munchies Home Page</a>
         </div>
       </footer>
     );
