@@ -1,0 +1,21 @@
+import React from 'react';
+import { Container, Grid, Input, List } from 'semantic-ui-react';
+
+export default class FooterMenu extends React.Component {
+  render() {
+    return (
+      <div className="bottommenu">
+        <Container>
+            <Grid>
+              <hr/>
+              <p>Contact Budget Munchies at nkimoto@hawaii.edu</p>
+              <p>Sign up to recieve our email updates!</p>
+              <Input
+                action={ { color: 'black', content: 'Join' } }
+                placeholder="Enter Email Address"/>
+          </Grid>
+        </Container>
+      </div>
+    );
+  }
+}
