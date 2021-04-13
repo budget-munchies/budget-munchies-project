@@ -1,21 +1,23 @@
 import React from 'react';
-import { Container, Grid, Input, List } from 'semantic-ui-react';
 
-export default class FooterMenu extends React.Component {
+/** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
+class Footer extends React.Component {
   render() {
+    const divStyle = { paddingTop: '15px' };
     return (
-      <div className="bottommenu">
-        <Container>
-            <Grid>
-              <hr/>
-              <p>Contact Budget Munchies at nkimoto@hawaii.edu</p>
-              <p>Sign up to recieve our email updates!</p>
+      <footer>
+        <div style={divStyle} className="ui center aligned container">
+          <hr />
+              Contact Budget Munchies at nkimoto@hawaii.edu<br />
+              Sign up to recieve our email updates!<br />
               <Input
                 action={ { color: 'black', content: 'Join' } }
                 placeholder="Enter Email Address"/>
-          </Grid>
-        </Container>
-      </div>
+          <a href="http://ics-software-engineering.github.io/meteor-application-template-react">Budget Munchies Home Page</a>
+        </div>
+      </footer>
     );
   }
 }
+
+export default Footer;
