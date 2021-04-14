@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Card, Image } from 'semantic-ui-react';
+import { Grid, Header, Card, Image, Icon, Button, Label } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -29,6 +29,19 @@ class Landing extends React.Component {
                      College student-friendly maple pecan pancakes made from scratch.
                   </Card.Description>
                 </Card.Content>
+                <Card.Content extra>
+                  <a>
+                    <Button as='div' labelPosition='right'>
+                      <Button icon>
+                        <Icon name='heart' />
+                        Like
+                      </Button>
+                      <Label as='a' basic pointing='left'>
+                        2,048
+                      </Label>
+                    </Button>
+                  </a>
+                </Card.Content>
               </Card>
               <Card>
                 <Image src='https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2020/Donna-Crous-food-photography/Media/Donna-Crous-food-photography-Popcorn-hand-n-triangle-styling.jpg' size={'medium'} />
@@ -41,6 +54,16 @@ class Landing extends React.Component {
                     A healthy, budget-friendly, addicting snack for after class.
                   </Card.Description>
                 </Card.Content>
+                <Card.Content extra>
+                  <Button as='div' labelPosition='right'>
+                    <Button icon>
+                      <Icon name='heart'/>
+                    Like
+                    </Button>
+                    <Label as='a' basic pointing='left'>
+                    2,022
+                    </Label>
+                  </Button></Card.Content>
               </Card>
             </Card.Group>
           </Grid.Column>
