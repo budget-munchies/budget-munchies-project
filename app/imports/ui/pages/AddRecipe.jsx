@@ -13,6 +13,7 @@ const formSchema = new SimpleSchema({
   image: String,
   ingredients: String,
   instructions: String,
+  servings: Number,
   mealType: {
     type: String,
     allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],
@@ -20,15 +21,14 @@ const formSchema = new SimpleSchema({
   },
   equipment: {
     type: String,
-    allowedValues: ['microwave', 'oven', 'stove'],
+    allowedValues: ['microwave', 'oven', 'stove', 'rice cooker'],
     defaultValue: 'microwave',
   },
   dietRestrictions: {
     type: String,
-    allowedValues: ['none', 'vegan', 'lactose-free', 'nut-free'],
+    allowedValues: ['none', 'vegan', 'vegetarian', 'lactose-free', 'nut-free', 'gluten-free'],
     defaultValue: 'none',
   },
-  servings: Number,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -64,10 +64,10 @@ class AddRecipe extends React.Component {
               <TextField name='image'/>
               <TextField name='ingredients'/>
               <LongTextField name='instructions'/>
+              <NumField name='servings' decimal={false}/>
               <SelectField name='mealType'/>
               <SelectField name='equipment'/>
               <SelectField name='dietRestrictions'/>
-              <NumField name='servings' decimal={false}/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
             </Segment>
