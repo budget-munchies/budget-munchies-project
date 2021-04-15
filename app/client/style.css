@@ -4,8 +4,9 @@
 
 #landing-page #left-landing {
   background-color: #95AFC9 !important;
-  padding-top: 274px;
-  padding-bottom: 274px;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  padding-left: 25px;
   font-size: large;
 }
 

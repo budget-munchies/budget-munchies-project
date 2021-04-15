@@ -11,9 +11,27 @@ class Landing extends React.Component {
         <Grid.Row columns={2}>
           <Grid.Column id={'left-landing'} textAlign='center'>
             <Header as={'h1'} style={lightColor}>BUDGET MUNCHIES</Header>
-            <p style={lightColor}>A community where students can
-              learn and share healthy, budget-friendly
-              recipes</p>
+            <br/>
+            <Grid.Row>
+              <Icon name={'users'} size={'big'} style={lightColor}/>
+              <Header as={'h3'} style={lightColor}> Cooking Community </Header>
+              <Header as={'h4'} style={lightColor}> This site is a way for college students to connect with others who are interested in saving money and eating healthy. </Header>
+            </Grid.Row>
+            <br/>
+            <Grid.Row>
+              <Icon name={'pencil alternate'} size={'big'} style={lightColor}/>
+              <Header as={'h3'} style={lightColor}> Share Recipes </Header>
+              <Header as={'h4'} style={lightColor}> Recipes will include a title, image, ingredients, instructions, equipment needed, dietary restrictions,
+                and amount of servings. Users can like recipes and save them to make later.
+              </Header>
+            </Grid.Row>
+            <br/>
+            <Grid.Row>
+              <Icon name={'warehouse'} size={'big'} style={lightColor}/>
+              <Header as={'h3'} style={lightColor}> Connect with Vendors </Header>
+              <Header as={'h4'} style={lightColor}> Vendors can upload items that are in-stock while Users can keep track of when to pick them up.
+              </Header>
+            </Grid.Row>
           </Grid.Column>
           <Grid.Column id={'right-landing'} >
             <Header as={'h1'} style={midColor} textAlign='center'>Best of This Week</Header>
@@ -30,17 +48,15 @@ class Landing extends React.Component {
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                  <a>
-                    <Button as='div' labelPosition='right'>
-                      <Button icon>
-                        <Icon name='heart' />
+                  <Button as='div' labelPosition='right'>
+                    <Button icon>
+                      <Icon name='heart' />
                         Like
-                      </Button>
-                      <Label as='a' basic pointing='left'>
-                        2,048
-                      </Label>
                     </Button>
-                  </a>
+                    <Label as='a' basic pointing='left'>
+                        2,048
+                    </Label>
+                  </Button>
                 </Card.Content>
               </Card>
               <Card>
