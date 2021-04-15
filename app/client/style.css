@@ -1,11 +1,21 @@
-#landing-page {
-  background-color: #E3EEFA !important;
-}
-
 .ui.inverted.menu {
   background-color: #3E546A !important;
 }
 
 body {
   background-color: #3E546A !important;
+}
+
+#landing-page #left-landing {
+  background-color: #95AFC9 !important;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  padding-left: 25px;
+  font-size: large;
+}
+
+#landing-page #right-landing {
+  background-color: #E3EEFA !important;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
