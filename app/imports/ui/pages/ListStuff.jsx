@@ -1,10 +1,9 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Image, Button, Icon, Label } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Stuffs } from '../../api/stuff/Stuff';
-import StuffItem from '../components/StuffItem';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListStuff extends React.Component {
@@ -18,20 +17,99 @@ class ListStuff extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">List Stuff</Header>
-        <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Quantity</Table.HeaderCell>
-              <Table.HeaderCell>Condition</Table.HeaderCell>
-              <Table.HeaderCell>Edit</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
-          </Table.Body>
-        </Table>
+        <Header as="h2" textAlign="center">Recipe List</Header>
+        <Card.Group>
+          <Card>
+            <Image src='https://weeattogether.com/wp-content/uploads/2018/02/6-Amazing-Food-Photography-Tricks-You-Need-To-Know-Pancakes.jpg' size={'medium'} />
+            <Card.Content>
+              <Card.Header>Maple Pecan Pancakes</Card.Header>
+              <Card.Meta>
+                <span className='date'>Posted on 04/13/21</span>
+              </Card.Meta>
+              <Card.Description>
+                College student-friendly maple pecan pancakes made from scratch.
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <Button as='div' labelPosition='right'>
+                <Button icon>
+                  <Icon name='heart' />
+                  Like
+                </Button>
+                <Label as='a' basic pointing='left'>
+                  2,048
+                </Label>
+              </Button>
+            </Card.Content>
+          </Card>
+          <Card>
+            <Image src='https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2020/Donna-Crous-food-photography/Media/Donna-Crous-food-photography-Popcorn-hand-n-triangle-styling.jpg' size={'medium'} />
+            <Card.Content>
+              <Card.Header>Buttered Popcorn</Card.Header>
+              <Card.Meta>
+                <span className='date'>Posted on 04/13/21</span>
+              </Card.Meta>
+              <Card.Description>
+                A healthy, budget-friendly, addicting snack for after class.
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <Button as='div' labelPosition='right'>
+                <Button icon>
+                  <Icon name='heart'/>
+                  Like
+                </Button>
+                <Label as='a' basic pointing='left'>
+                  2,022
+                </Label>
+              </Button></Card.Content>
+          </Card>
+          <Card>
+            <Image src='https://weeattogether.com/wp-content/uploads/2018/02/6-Amazing-Food-Photography-Tricks-You-Need-To-Know-Pancakes.jpg' size={'medium'} />
+            <Card.Content>
+              <Card.Header>Maple Pecan Pancakes</Card.Header>
+              <Card.Meta>
+                <span className='date'>Posted on 04/13/21</span>
+              </Card.Meta>
+              <Card.Description>
+                  College student-friendly maple pecan pancakes made from scratch.
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <Button as='div' labelPosition='right'>
+                <Button icon>
+                  <Icon name='heart' />
+                    Like
+                </Button>
+                <Label as='a' basic pointing='left'>
+                    2,048
+                </Label>
+              </Button>
+            </Card.Content>
+          </Card>
+          <Card>
+            <Image src='https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2020/Donna-Crous-food-photography/Media/Donna-Crous-food-photography-Popcorn-hand-n-triangle-styling.jpg' size={'medium'} />
+            <Card.Content>
+              <Card.Header>Buttered Popcorn</Card.Header>
+              <Card.Meta>
+                <span className='date'>Posted on 04/13/21</span>
+              </Card.Meta>
+              <Card.Description>
+                  A healthy, budget-friendly, addicting snack for after class.
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <Button as='div' labelPosition='right'>
+                <Button icon>
+                  <Icon name='heart'/>
+                    Like
+                </Button>
+                <Label as='a' basic pointing='left'>
+                    2,022
+                </Label>
+              </Button></Card.Content>
+          </Card>
+        </Card.Group>
       </Container>
     );
   }
