@@ -17,7 +17,7 @@ class ListStuff extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">Recipe List</Header>
+        <Header as="h2" textAlign="center" inverted>Recipe List</Header>
         <Card.Group>
           <Card>
             <Image src='https://weeattogether.com/wp-content/uploads/2018/02/6-Amazing-Food-Photography-Tricks-You-Need-To-Know-Pancakes.jpg' size={'medium'} />
