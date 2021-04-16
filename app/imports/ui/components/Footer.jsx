@@ -15,6 +15,7 @@ class Footer extends React.Component {
             action={ { color: 'black', content: 'Join' } }
             placeholder="Enter Email Address"/>
           <a href="https://budget-munchies.github.io">Budget Munchies Home Page</a>
+
         </div>
       </footer>
     );
