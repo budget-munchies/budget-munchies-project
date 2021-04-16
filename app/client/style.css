@@ -19,3 +19,15 @@ body {
   padding-top: 25px;
   padding-bottom: 25px;
 }
+
+#navbar {
+  background-color: #728eaa;
+}
+
+.text {
+  color: #e2edf9 !important;
+}
+
+.items {
+  color: #3E546A !important;
+}
