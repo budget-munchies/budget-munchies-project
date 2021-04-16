@@ -28,6 +28,7 @@ body {
   color: #e2edf9 !important;
 }
 
-.items {
-  color: #3E546A !important;
+#dropdown {
+  background-color: #3E546A !important;
+  color: #e2edf9 !important;
 }

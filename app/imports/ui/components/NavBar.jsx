@@ -21,13 +21,13 @@ class NavBar extends React.Component {
             <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>Recipes List</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor' className='text'>Vendors</Menu.Item>,
             <Menu.Item>
-              <Dropdown className='text' text='Browse Recipes'>
-                <Dropdown.Menu>
-                  <Dropdown.Item className='items' text='Breakfast' />
-                  <Dropdown.Item className='items' text='Lunch' />
-                  <Dropdown.Item className='items' text='Dinner' />
-                  <Dropdown.Item className='items' text='Dessert' />
-                  <Dropdown.Item className='items' text='Snacks' />
+              <Dropdown pointing text='Browse Recipes'>
+                <Dropdown.Menu id='dropdown'>
+                  <Dropdown.Item text='Breakfast' />
+                  <Dropdown.Item text='Lunch' />
+                  <Dropdown.Item text='Dinner' />
+                  <Dropdown.Item text='Dessert' />
+                  <Dropdown.Item text='Snacks' />
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
