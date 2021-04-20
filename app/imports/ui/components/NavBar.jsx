@@ -16,24 +16,24 @@ class NavBar extends React.Component {
           <Header as='h1' className='text'>Budget Munchies</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/home" key='home' className='text'>Home</Menu.Item>,
+          [<Menu.Item as={NavLink} activeClassName="" exact to="/" className='text'>Home</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>Recipes List</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor' className='text'>Vendors</Menu.Item>,
             <Menu.Item>
               <Dropdown pointing text='Browse Recipes'>
                 <Dropdown.Menu id='dropdown'>
-                  <Dropdown.Item text='Breakfast' />
-                  <Dropdown.Item text='Lunch' />
-                  <Dropdown.Item text='Dinner' />
-                  <Dropdown.Item text='Dessert' />
-                  <Dropdown.Item text='Snacks' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/breakfast" key='home' text='Breakfast' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/lunch" key='home' text='Lunch' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dinner" key='home' text='Dinner' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dessert" key='home' text='Dessert' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/snacks" key='home' text='Snacks' />
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
             <Menu.Item position="right" as={NavLink} activeClassName="active" exact to="/search" key='search' className='text'><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
         ) : ''}
-        {/*Change admin to vendors and have vendors see statistics on popular food items/ingredients maybe*/}
+        {/* Change admin to vendors and have vendors see statistics on popular food items/ingredients maybe */}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
         ) : ''}
