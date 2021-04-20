@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header } from 'semantic-ui-react';
+import { Menu, Dropdown, Header, Input } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
@@ -11,18 +11,33 @@ class NavBar extends React.Component {
   render() {
     const menuStyle = { marginBottom: '10px' };
     return (
-      <Menu style={menuStyle} attached="top" borderless inverted>
+      <Menu style={menuStyle} attached="top" borderless id='navbar'>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>Budget Munchies</Header>
+          <Header as='h1' className='text'>Budget Munchies</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Recipe</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>]
+          [<Menu.Item as={NavLink} activeClassName="active" exact to="/home" key='home' className='text'>Home</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>Recipes List</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor' className='text'>Vendors</Menu.Item>,
+            <Menu.Item>
+              <Dropdown pointing text='Browse Recipes'>
+                <Dropdown.Menu id='dropdown'>
+                  <Dropdown.Item text='Breakfast' />
+                  <Dropdown.Item text='Lunch' />
+                  <Dropdown.Item text='Dinner' />
+                  <Dropdown.Item text='Dessert' />
+                  <Dropdown.Item text='Snacks' />
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>,
+            <Menu.Item position="right" as={NavLink} activeClassName="active" exact to="/search" key='search' className='text'><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
         ) : ''}
+        {/*Change admin to vendors and have vendors see statistics on popular food items/ingredients maybe*/}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
         ) : ''}
-        <Menu.Item position="right">
+        <Menu.Item>
           {this.props.currentUser === '' ? (
             <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
               <Dropdown.Menu>
@@ -31,7 +46,7 @@ class NavBar extends React.Component {
               </Dropdown.Menu>
             </Dropdown>
           ) : (
-            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'}>
+            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" className='text' icon={'user'}>
               <Dropdown.Menu>
                 <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
               </Dropdown.Menu>
