@@ -9,9 +9,8 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '10px' };
     return (
-      <Menu style={menuStyle} attached="top" borderless id='navbar'>
+      <Menu attached="top" borderless id='navbar'>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header as='h1' className='text'>Budget Munchies</Header>
         </Menu.Item>
@@ -23,11 +22,11 @@ class NavBar extends React.Component {
             <Menu.Item key='dropdown'>
               <Dropdown pointing text='Browse Recipes'>
                 <Dropdown.Menu id='dropdown'>
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/breakfast" key='home' text='Breakfast' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/lunch" key='home' text='Lunch' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dinner" key='home' text='Dinner' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dessert" key='home' text='Dessert' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/snacks" key='home' text='Snacks' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/breakfast" key='breakfast' text='Breakfast' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/lunch" key='lunch' text='Lunch' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dinner" key='dinner' text='Dinner' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dessert" key='dessert' text='Dessert' />
+                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/snacks" key='snacks' text='Snacks' />
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
