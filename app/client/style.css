@@ -29,6 +29,10 @@ body {
 }
 
 #dropdown {
-  background-color: #3E546A !important;
+  background-color: #728eaa !important;
+  color: #e2edf9 !important;
+}
+
+#login-dropdown-signout {
   color: #e2edf9 !important;
 }
