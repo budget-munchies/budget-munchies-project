@@ -6,7 +6,7 @@ class Footer extends React.Component {
     const divStyle = { paddingTop: '15px', color: '#E3EEFA' };
     return (
       <footer>
-        <div style={divStyle} className="ui center aligned container" color='white'>
+        <div style={divStyle} id='footer' className="ui center aligned fluid container">
           Budget Munchies is a project by students, for students!<br/>
           Contact Budget Munchies at budgetmunchies@hawaii.edu<br />
           Sign up to get our email updates!<br />
