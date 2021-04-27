@@ -44,7 +44,7 @@ test.skip('Test the Add Stuff page', async (testController) => {
   await addStuffPage.isDisplayed(testController);
 });
 
-test('Test the Edit Stuff page', async (testController) => {
+test.skip('Test the Edit Stuff page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoEditStuffPage(testController);
