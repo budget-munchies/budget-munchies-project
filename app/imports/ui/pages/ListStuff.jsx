@@ -17,7 +17,7 @@ class ListStuff extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
+      <Container id="list-stuff-page">
         <Header as="h2" textAlign="center">List Stuff</Header>
         <Table celled>
           <Table.Header>
