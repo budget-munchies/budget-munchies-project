@@ -15,7 +15,6 @@ class NavBar extends React.Component {
           <Header as='h1' className='text'>Budget Munchies</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-<<<<<<< Updated upstream
           [<Menu.Item as={NavLink} activeClassName="" exact to="/" className='text' key='home'>Home</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>Recipes List</Menu.Item>,
@@ -32,11 +31,6 @@ class NavBar extends React.Component {
               </Dropdown>
             </Menu.Item>,
             <Menu.Item key='search' position="right"><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
-=======
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
-            <Menu.Item id="navbar-list-stuff" as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>,
-            <Menu.Item id="navbar-edit-stuff" as={NavLink} activeClassName="active" exact to="/list" key='list'>Edit Stuff</Menu.Item>]
->>>>>>> Stashed changes
         ) : ''}
         {/* Change admin to vendors and have vendors see statistics on popular food items/ingredients maybe */}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (

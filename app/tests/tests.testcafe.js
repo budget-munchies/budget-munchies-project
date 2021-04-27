@@ -5,6 +5,8 @@ import { navBar } from './navbar.component';
 import { listStuffPage } from './liststuff.page';
 import { addStuffPage } from './addstuff.page';
 import { editStuffPage } from './editstuff.page';
+// eslint-disable-next-line import/named
+import { addRecipePage } from './addrecipe.page';
 // import { notFoundPage } from './notfound.page';
 
 /* global fixture:false, test:false */
@@ -35,7 +37,7 @@ test('Test the List Stuff page', async (testController) => {
   await listStuffPage.hasTable(testController);
 });
 
-test('Test the Add Stuff page', async (testController) => {
+test.skip('Test the Add Stuff page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAddStuffPage(testController);
@@ -47,6 +49,13 @@ test('Test the Edit Stuff page', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoEditStuffPage(testController);
   await editStuffPage.isDisplayed(testController);
+});
+
+test('Test the Add Recipe page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoAddRecipePage(testController);
+  await addRecipePage.isDisplayed(testController);
 });
 
 // test('Test that not found page shows up', async (testController) => {
