@@ -52,6 +52,11 @@ class NavBar {
     await testController.click('#navbar-edit-stuff');
   }
 
+  /** Pull down login menu, go to AddStuff page. */
+  async gotoAddRecipePage(testController) {
+    await testController.click('#navbar-add-recipe');
+  }
+
   /** Pull down login menu, go to ListStuff page. */
   // async gotoNotFoundPage(testController) {
   // await testController.click('#navbar-not-found');

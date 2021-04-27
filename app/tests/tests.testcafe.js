@@ -34,7 +34,6 @@ test('Test the List Stuff page', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListStuffPage(testController);
   await listStuffPage.isDisplayed(testController);
-  await listStuffPage.hasTable(testController);
 });
 
 test.skip('Test the Add Stuff page', async (testController) => {
