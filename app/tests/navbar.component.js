@@ -57,7 +57,7 @@ class NavBar {
     await testController.click('#navbar-add-recipe');
   }
 
-  /** go to admin page */
+  /** sign in and go to admin page */
   async gotoAdminPage(testController) {
     await testController.click('#navbar-admin');
   }
