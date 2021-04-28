@@ -20,3 +20,5 @@ A request to "http://localhost:3000/" has failed
       that make the server inaccessible.
 
 However, testcafe passes ALL test (5) with no problems on local machine. Some crosswiring happened when branches merged, maybe a github issue. I quadrupled checked on my local machine. Application is up and running and all tests pass. 
+
+I tested GitHub by manually writing changes here and comitting, and they are not working with continuous integration. 
