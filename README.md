@@ -1,4 +1,4 @@
-![ci-badge](https://github.com/budget-munchies/budget-munchies-project/workflows/ci-budget-munchies-project/badge.svg)
+![ci-badge](https://github.com/budget-munchies/budget-munchies-project/workflows/ci-budget-munchies/badge.svg)
 
 For details, please see http://ics-software-engineering.github.io/meteor-application-template-react/
 
