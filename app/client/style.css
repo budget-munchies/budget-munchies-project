@@ -1,9 +1,31 @@
-.ui.inverted.menu {
-  background-color: #3E546A !important;
+/* elements */
+body {
+  background-color: #E3EEFA !important;
 }
 
-body {
-  background-color: #3E546A !important;
+/* ids */
+#footer {
+  position: absolute;
+  background-color: #3E546A;
+}
+
+#notFound {
+  position: relative;
+  min-height: 70vh;
+}
+
+#notFound p {
+  font-size: x-large;
+  font-weight: bold;
+  color: #3E546A;
+}
+
+#notFound p.cookies {
+  font-size: x-large;
+}
+
+#notFound p.credit {
+  font-size: larger;
 }
 
 #landing-page #left-landing {
@@ -24,10 +46,6 @@ body {
   background-color: #3E546A;
 }
 
-.text {
-  color: #e2edf9 !important;
-}
-
 #dropdown {
   background-color: #728eaa !important;
   color: #e2edf9 !important;
@@ -35,4 +53,13 @@ body {
 
 #login-dropdown-signout {
   color: #e2edf9 !important;
+}
+
+/* classes */
+.text {
+  color: #e2edf9 !important;
+}
+
+.ui.inverted.menu {
+  background-color: #3E546A !important;
 }

@@ -57,9 +57,9 @@ class NavBar {
     await testController.click('#navbar-add-recipe');
   }
 
-  /** Pull down login menu, go to ListStuff page. */
-  // async gotoNotFoundPage(testController) {
-  // await testController.click('#navbar-not-found');
-  // }
+  /** notfoundpage. */
+  async gotoNotFoundPage(testController) {
+    await testController.click('#navbar-notFound');
+  }
 }
 export const navBar = new NavBar();
