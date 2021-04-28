@@ -20,7 +20,7 @@ class FavoriteRecipes extends React.Component {
     return (
       <Container>
         <Card.Group>
-          {_.map(_.filter(Recipes, function (recipe) { return recipe.favorite === true; }), (recipe, index) => <RecipeCard key={index} recipe={recipe}/>)}
+          {this.props.recipes.map(_.filter(Recipes, function (recipe) { return recipe.favorite === true; }), (recipe, index) => <RecipeCard key={index} recipe={recipe}/>)}
         </Card.Group>
       </Container>
     );
@@ -29,6 +29,7 @@ class FavoriteRecipes extends React.Component {
 
 // Require an array of Stuff documents in the props.
 FavoriteRecipes.propTypes = {
+  recipes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 

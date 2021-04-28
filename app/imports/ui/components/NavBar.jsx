@@ -47,6 +47,7 @@ class NavBar extends React.Component {
             <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing className='text' icon={'user'}>
               <Dropdown.Menu id='dropdown'>
                 <Dropdown.Item icon="sign out" text="Sign Out" className='text' id="login-dropdown-sign-out" as={NavLink} exact to="/signout"/>
+                <Dropdown.Item icon="heart outline" text="My Favorites" className='text' id="login-dropdown-favorites" as={NavLink} exact to="/favorite"/>
               </Dropdown.Menu>
             </Dropdown>
           )}
