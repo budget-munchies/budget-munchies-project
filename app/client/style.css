@@ -9,22 +9,22 @@ body {
   background-color: #3E546A;
 }
 
-#notFound {
+#not-found-page {
   position: relative;
   min-height: 70vh;
 }
 
-#notFound p {
+#not-found-page p {
   font-size: x-large;
   font-weight: bold;
   color: #3E546A;
 }
 
-#notFound p.cookies {
+#not-found-page p.cookies {
   font-size: x-large;
 }
 
-#notFound p.credit {
+#not-found-page p.credit {
   font-size: larger;
 }
 

@@ -59,7 +59,7 @@ class NavBar {
 
   /** notfoundpage. */
   async gotoNotFoundPage(testController) {
-    await testController.click('#navbar-notFound');
+    await testController.click('#navbar-not-found');
   }
 }
 export const navBar = new NavBar();

@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 
 class NotFoundPage {
   constructor() {
-    this.pageId = '#notFound';
+    this.pageId = '#not-found-page';
     this.pageSelector = Selector(this.pageId);
   }
 

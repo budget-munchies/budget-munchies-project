@@ -6,7 +6,7 @@ class NotFound extends React.Component {
   render() {
     const textStyle = { paddingTop: '15px', marginBottom: '-0.1px' };
     return (
-      <Container fluid textAlign='center' id='notFound'>
+      <Container fluid textAlign='center' id='not-found-page'>
         <p style={textStyle}>
             Sorry, that page was not found.
         </p>
