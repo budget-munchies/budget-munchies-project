@@ -8,6 +8,7 @@ class Landing extends React.Component {
     const lightColor = { color: '#E3EEFA' };
     return (
       <Grid id='admin-page' >
+
         <Grid.Row columns={2}>
           <Grid.Column id={'left-landing'} textAlign='center'>
             <Header as={'h1'} style={lightColor}>BUDGET MUNCHIES</Header>
@@ -97,17 +98,19 @@ class Landing extends React.Component {
                     <span className='date'>Posted on 04/13/21</span>
                   </Card.Meta>
                   <Card.Description>
-                      College student-friendly maple pecan pancakes made from scratch.
+
+                  College student-friendly maple pecan pancakes made from scratch.
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
                   <Button as='div' labelPosition='right'>
                     <Button icon>
                       <Icon name='heart' />
-                        Like
+
+                    Like
                     </Button>
                     <Label as='a' basic pointing='left'>
-                        2,048
+                    2,048
                     </Label>
                   </Button>
                 </Card.Content>
@@ -120,17 +123,21 @@ class Landing extends React.Component {
                     <span className='date'>Posted on 04/13/21</span>
                   </Card.Meta>
                   <Card.Description>
-                      A healthy, budget-friendly, addicting snack for after class.
+
+                  A healthy, budget-friendly, addicting snack for after class.
+
                   </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
                   <Button as='div' labelPosition='right'>
                     <Button icon>
                       <Icon name='heart'/>
-                        Like
+
+                    Like
                     </Button>
                     <Label as='a' basic pointing='left'>
-                        2,022
+                    2,022
+
                     </Label>
                   </Button></Card.Content>
               </Card>

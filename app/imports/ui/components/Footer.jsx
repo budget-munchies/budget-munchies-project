@@ -17,6 +17,7 @@ class Footer extends React.Component {
                 <Icon link name='home' />
                 <a href="https://
                 budget-munchies.github.io">  Budget Munchies Home Page</a>
+
               </GridColumn>
               <GridColumn>
                 <Input

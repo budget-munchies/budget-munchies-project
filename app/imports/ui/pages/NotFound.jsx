@@ -16,6 +16,7 @@ class NotFound extends React.Component {
         <Image src={'/images/notFound-cookies.jpg'} size='massive' centered/>
         <p className={'credit'}>
             Photo by <a href="https://unsplash.com/@thecreative_exchange?utm_source=unsplash&utm_medium=
+
           referral&utm_content=creditCopyText">The Creative Exchange</a> on <a href="https://unsplash.com/s/photos/cookies?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </p>
       </Container>

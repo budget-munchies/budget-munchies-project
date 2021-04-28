@@ -5,26 +5,31 @@ body {
 
 /* ids */
 #footer {
+
   position: absolute;
   background-color: #3E546A;
 }
 
 #not-found-page {
+
   position: relative;
   min-height: 70vh;
 }
 
 #not-found-page p {
   font-size: x-large;
+
   font-weight: bold;
   color: #3E546A;
 }
+
 
 #not-found-page p.cookies {
   font-size: x-large;
 }
 
 #not-found-page p.credit {
+
   font-size: larger;
 }
 
@@ -63,3 +68,4 @@ body {
 .ui.inverted.menu {
   background-color: #3E546A !important;
 }
+
