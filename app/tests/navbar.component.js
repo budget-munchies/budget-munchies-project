@@ -56,5 +56,10 @@ class NavBar {
   async gotoAddRecipePage(testController) {
     await testController.click('#navbar-add-recipe');
   }
+
+  /** go to admin page */
+  async gotoAdminPage(testController) {
+    await testController.click('#navbar-admin');
+  }
 }
 export const navBar = new NavBar();

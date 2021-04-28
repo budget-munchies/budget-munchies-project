@@ -7,12 +7,13 @@ import { addStuffPage } from './addstuff.page';
 import { editStuffPage } from './editstuff.page';
 // eslint-disable-next-line import/named
 import { addRecipePage } from './addrecipe.page';
-import { notFoundPage } from './notfound.page';
+import { adminPage } from './admin.page';
 
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
+const adCredentials = { username: 'admin@foo.com', password: 'changeme'};
 
 fixture('budget-munchies-project localhost test with default db')
   .page('http://localhost:3000');
@@ -57,4 +58,10 @@ test('Test the Add Recipe page', async (testController) => {
   await addRecipePage.isDisplayed(testController);
 });
 
+test('Test the admin page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, adCredentials.username, adCredentials.password);
+  await navBar.gotoAdminPage(testController);
+  await adminPage.isDisplayed(testController);
+});
 

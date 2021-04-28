@@ -7,7 +7,7 @@ class Landing extends React.Component {
     const midColor = { color: '#95AFC9' };
     const lightColor = { color: '#E3EEFA' };
     return (
-      <Grid id='landing-page' >
+      <Grid id='admin-page' >
         <Grid.Row columns={2}>
           <Grid.Column id={'left-landing'} textAlign='center'>
             <Header as={'h1'} style={lightColor}>BUDGET MUNCHIES</Header>

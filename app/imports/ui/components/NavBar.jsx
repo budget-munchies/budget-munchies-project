@@ -34,7 +34,7 @@ class NavBar extends React.Component {
         ) : ''}
         {/* Change admin to vendors and have vendors see statistics on popular food items/ingredients maybe */}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
+          <Menu.Item id="navbar-admin" as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
         ) : ''}
         <Menu.Item className='text'>
           {this.props.currentUser === '' ? (
