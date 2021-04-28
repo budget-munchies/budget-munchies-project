@@ -56,10 +56,5 @@ class NavBar {
   async gotoAddRecipePage(testController) {
     await testController.click('#navbar-add-recipe');
   }
-
-  /** notfoundpage. */
-  async gotoNotFoundPage(testController) {
-    await testController.click('#navbar-not-found');
-  }
 }
 export const navBar = new NavBar();
