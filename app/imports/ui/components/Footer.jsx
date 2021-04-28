@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from 'semantic-ui-react';
+import { Input, Icon, Grid, GridColumn } from 'semantic-ui-react';
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
@@ -11,10 +11,20 @@ class Footer extends React.Component {
             Contact Budget Munchies at budgetmunchies@hawaii.edu<br />
             Sign up to get our email updates!<br />
           <br/>
-          <Input
-            action={ { color: 'black', content: 'Join' } }
-            placeholder="Enter Email Address"/>
-          <a href="https://budget-munchies.github.io">  Budget Munchies Home Page</a>
+          <Grid>
+            <Grid.Row columns={2}>
+              <GridColumn>
+                <Icon link name='home' />
+                <a href="https://
+                budget-munchies.github.io">  Budget Munchies Home Page</a>
+              </GridColumn>
+              <GridColumn>
+                <Input
+                  action={ { color: 'blue', content: 'Join' } }
+                  placeholder="Enter Email Address"/>
+              </GridColumn>
+            </Grid.Row>
+          </Grid>
         </div>
       </footer>
     );

@@ -55,3 +55,14 @@ test('Test the Add Recipe page', async (testController) => {
   await navBar.gotoAddRecipePage(testController);
   await addRecipePage.isDisplayed(testController);
 });
+
+/*
+test('Navigate to the not found page', async t => {
+await t
+ .click('#navbar-not-found')
+.navigateTo('http://localhost:3000/#/vendor');
+});
+#devloper notes:
+not found page is currently linked to a non-existent vendor page, becuase we are still deciding how to implement vendors in our program.
+This will be figured out during M3.
+*/
