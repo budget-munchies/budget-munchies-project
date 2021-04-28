@@ -36,14 +36,14 @@ test('Test the List Stuff page', async (testController) => {
   await navBar.gotoListStuffPage(testController);
   await listStuffPage.isDisplayed(testController);
 });
-
+/* skipped because not needed */
 test.skip('Test the Add Stuff page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAddStuffPage(testController);
   await addStuffPage.isDisplayed(testController);
 });
-
+/* skipped because not needed */
 test.skip('Test the Edit Stuff page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
