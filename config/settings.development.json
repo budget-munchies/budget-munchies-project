@@ -14,5 +14,11 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultRecipes": [
+    { "title": "Mac N' Cheese", "image": "mac-n-cheese.jpg", "description": "Quick and Easy Mac and Cheese with only 3 ingredients", "ingredients": "Elbow Pasta, American Cheese, Milk", "instructions": "Boil the pasta. Melt the cheese and milk together. Pour over the pasta and mix.", "servings": 4, "likes": 32, "favorite": true, "mealType": "lunch", "equipment": "microwave", "dietRestrictions": "vegetarian" },
+    { "title": "Chocolate Mousse", "image": "choco-mousse.jpeg", "description": "Decadent and easy chocolate mousse", "ingredients": "Chocolate, Sugar, Milk, Eggs, Flour", "instructions": "Mix all the ingredients together and bake at 350 degrees for 15 minutes.", "servings": 4, "likes": 17, "favorite": true, "mealType": "dessert", "equipment": "oven", "dietRestrictions": "vegetarian" },
+    { "title": "Spinach Wraps", "image": "spinach-wraps.jpg", "description": "Simple and healthy wraps to get those veggies in!", "ingredients": "Spinach, Tortillas, Hummus", "instructions": "Spread hummus on the tortilla. Add the spinach and roll it up.", "servings": 2, "likes": 12, "favorite": false, "mealType": "lunch", "equipment": "none", "dietRestrictions": "vegan" }
   ]
 }

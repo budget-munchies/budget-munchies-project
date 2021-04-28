@@ -11,6 +11,7 @@ import { Recipes } from '../../api/recipe/Recipe';
 const formSchema = new SimpleSchema({
   title: String,
   image: String,
+  description: String,
   ingredients: String,
   instructions: String,
   servings: Number,
@@ -38,9 +39,9 @@ class AddRecipe extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { title, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings } = data;
+    const { title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings } = data;
     const owner = Meteor.user().username;
-    Recipes.collection.insert({ title, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner },
+    Recipes.collection.insert({ title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -63,6 +64,7 @@ class AddRecipe extends React.Component {
             <Segment>
               <TextField name='title'/>
               <TextField name='image'/>
+              <LongTextField name='description'/>
               <TextField name='ingredients'/>
               <LongTextField name='instructions'/>
               <NumField name='servings' decimal={false}/>

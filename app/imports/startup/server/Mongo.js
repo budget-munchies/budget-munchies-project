@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
+import { Recipes } from '../../api/recipe/Recipe.js';
 
 /* eslint-disable no-console */
 
@@ -9,10 +10,24 @@ function addData(data) {
   Stuffs.collection.insert(data);
 }
 
+// Initialize the database with a default data document.
+function addRecipe(recipe) {
+  console.log(`  Adding: ${recipe.title} (${recipe.owner})`);
+  Recipes.collection.insert(recipe);
+}
+
 // Initialize the StuffsCollection if empty.
 if (Stuffs.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
     console.log('Creating default data.');
     Meteor.settings.defaultData.map(data => addData(data));
+  }
+}
+
+// Initialize the RecipesCollection if empty.
+if (Recipes.collection.find().count() === 0) {
+  if (Meteor.settings.defaultRecipes) {
+    console.log('Creating default recipes.');
+    Meteor.settings.defaultRecipes.map(recipe => addRecipe(recipe));
   }
 }
