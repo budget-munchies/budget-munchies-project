@@ -18,7 +18,6 @@ class NavBar extends React.Component {
           [<Menu.Item as={NavLink} activeClassName="" exact to="/" className='text' key='home'>Home</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>Recipes List</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/vendor" key='vendor' className='text'>Vendors</Menu.Item>,
             <Menu.Item key='dropdown'>
               <Dropdown pointing text='Browse Recipes' className='text'>
                 <Dropdown.Menu id='dropdown'>
