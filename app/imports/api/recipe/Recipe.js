@@ -20,7 +20,7 @@ class RecipesCollection {
       instructions: String,
       servings: Number,
       likes: Number,
-      favorite: Boolean,
+      owner: String,
       mealType: {
         type: String,
         allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],
