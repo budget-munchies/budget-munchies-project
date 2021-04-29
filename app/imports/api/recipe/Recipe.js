@@ -18,7 +18,6 @@ class RecipesCollection {
       ingredients: String,
       instructions: String,
       servings: Number,
-      likes: Number,
       mealType: {
         type: String,
         allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],

@@ -62,9 +62,9 @@ class AddRecipe extends React.Component {
             <Segment>
               <TextField name='title'/>
               <TextField name='image'/>
-              <TextField name='ingredients'/>
+              <LongTextField name='ingredients'/>
               <LongTextField name='instructions'/>
-              <NumField name='servings' decimal={false}/>
+              <NumField name='servings' decimal={false} min={0} />
               <SelectField name='mealType'/>
               <SelectField name='equipment'/>
               <SelectField name='dietRestrictions'/>
