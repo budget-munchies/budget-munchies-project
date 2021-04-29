@@ -15,8 +15,7 @@ class Footer extends React.Component {
             <Grid.Row columns={2}>
               <GridColumn>
                 <Icon link name='home' />
-                <a href="https://
-                budget-munchies.github.io">  Budget Munchies Home Page</a>
+                <a href="https://budget-munchies.github.io">Budget Munchies Home Page</a>
 
               </GridColumn>
               <GridColumn>
