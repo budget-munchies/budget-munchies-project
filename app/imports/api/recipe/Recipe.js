@@ -15,10 +15,15 @@ class RecipesCollection {
     this.schema = new SimpleSchema({
       title: String,
       image: String,
+      date: Date,
+      description: String,
       ingredients: String,
       instructions: String,
       servings: Number,
-      likes: Number,
+      likes: {
+        type: Number,
+        defaultValue: 0,
+      },
       mealType: {
         type: String,
         allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert', 'snack'],
