@@ -3,7 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The RecipesCollection. It encapsulates state and variable values for stuff.
+ * The RecipesCollection. It encapsulates state and variable values for a recipe.
  */
 class RecipesCollection {
   constructor() {
@@ -15,25 +15,31 @@ class RecipesCollection {
     this.schema = new SimpleSchema({
       title: String,
       image: String,
+      date: Date,
+      description: String,
       ingredients: String,
       instructions: String,
       servings: Number,
-      likes: Number,
+      likes: {
+        type: Number,
+        defaultValue: 0,
+      },
       mealType: {
         type: String,
-        allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],
+        allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert', 'snack'],
         defaultValue: 'breakfast',
       },
       equipment: {
         type: String,
-        allowedValues: ['microwave', 'oven', 'stove', 'rice cooker'],
+        allowedValues: ['microwave', 'oven', 'stove', 'rice cooker', 'none'],
         defaultValue: 'microwave',
       },
-      dietRestrictions: {
+      dietRestriction: {
         type: String,
         allowedValues: ['none', 'vegan', 'vegetarian', 'lactose-free', 'nut-free', 'gluten-free'],
         defaultValue: 'none',
       },
+      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
