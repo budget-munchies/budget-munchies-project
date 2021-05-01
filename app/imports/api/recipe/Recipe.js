@@ -31,7 +31,7 @@ class RecipesCollection {
       },
       equipment: {
         type: String,
-        allowedValues: ['microwave', 'oven', 'stove', 'rice cooker', 'none'],
+        allowedValues: ['microwave', 'oven', 'stove', 'rice cooker', 'blender', 'none'],
         defaultValue: 'microwave',
       },
       dietRestriction: {
