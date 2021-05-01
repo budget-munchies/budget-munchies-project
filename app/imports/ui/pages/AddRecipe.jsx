@@ -7,8 +7,8 @@ import {
   SelectField,
   SubmitField,
   TextField,
-  LongTextField,
   DateField,
+  ListField,
 } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
@@ -22,8 +22,18 @@ const formSchema = new SimpleSchema({
   date: Date,
   image: String,
   description: String,
-  ingredients: String,
-  instructions: String,
+  ingredients: Array,
+  'ingredients.$': {
+    type: String,
+    label: 'ingredients',
+    optional: false,
+  },
+  instructions: Array,
+  'instructions.$': {
+    type: String,
+    label: 'instructions',
+    optional: false,
+  },
   servings: Number,
   mealType: {
     type: String,
@@ -56,7 +66,7 @@ class AddRecipe extends React.Component {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Recipe added successfully', 'success');
           formRef.reset();
         }
       });
@@ -77,8 +87,8 @@ class AddRecipe extends React.Component {
               <DateField name='date'/>
               <TextField name='image'/>
               <TextField name='description'/>
-              <LongTextField name='ingredients'/>
-              <LongTextField name='instructions'/>
+              <ListField name='ingredients'/>
+              <ListField name='instructions'/>
               <NumField name='servings' decimal={false} min={0}/>
               <SelectField name='mealType'/>
               <SelectField name='equipment'/>

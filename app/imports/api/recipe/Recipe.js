@@ -17,8 +17,10 @@ class RecipesCollection {
       image: String,
       date: Date,
       description: String,
-      ingredients: String,
-      instructions: String,
+      ingredients: Array,
+      'ingredients.$': String,
+      instructions: Array,
+      'instructions.$': String,
       servings: Number,
       likes: {
         type: Number,
