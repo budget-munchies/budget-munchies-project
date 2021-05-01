@@ -15,10 +15,8 @@ class NavBar extends React.Component {
           <Header as='h1' className='text'>Budget Munchies</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="" exact to="/" className='text' key='home'>Home</Menu.Item>,
-            <Menu.Item id="navbar-add-recipe" as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
-            <Menu.Item id="navbar-list-stuff" as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>Recipes List</Menu.Item>,
-
+          [<Menu.Item id="navbar-add-recipe" as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
+            <Menu.Item id="navbar-list-stuff" as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'> My Recipes </Menu.Item>,
             <Menu.Item key='dropdown'>
               <Dropdown pointing text='Browse Recipes'>
                 <Dropdown.Menu id='dropdown'>

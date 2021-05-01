@@ -55,17 +55,18 @@ class AddRecipe extends React.Component {
   render() {
     let fRef = null;
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
+    const btmarg = { marginBottom: '25px' };
     return (
       <Grid container id="add-recipe-page" centered>
         <Grid.Column>
           <Header as="h2" textAlign="center" style={headerStyle}>Add Recipe</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
+            <Segment style={btmarg}>
               <TextField name='title'/>
               <TextField name='image'/>
-              <TextField name='ingredients'/>
+              <LongTextField name='ingredients'/>
               <LongTextField name='instructions'/>
-              <NumField name='servings' decimal={false}/>
+              <NumField name='servings' decimal={false} min={0}/>
               <SelectField name='mealType'/>
               <SelectField name='equipment'/>
               <SelectField name='dietRestrictions'/>
