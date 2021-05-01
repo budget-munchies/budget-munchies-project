@@ -10,7 +10,7 @@ function addData(data) {
   Stuffs.collection.insert(data);
 }
 
-// Initialize the database with a default data document.
+// Initialize the database with a default recipes document.
 function addRecipe(data) {
   console.log(`  Adding: ${data.title} (${data.owner})`);
   Recipes.collection.insert(data);
@@ -27,7 +27,7 @@ if (Stuffs.collection.find().count() === 0) {
 // Initialize the RecipesCollection if empty.
 if (Recipes.collection.find().count() === 0) {
   if (Meteor.settings.defaultRecipes) {
-    console.log('Creating default data.');
+    console.log('Creating default recipes.');
     Meteor.settings.defaultRecipes.map(data => addRecipe(data));
   }
 }
