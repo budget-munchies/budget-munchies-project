@@ -50,5 +50,14 @@
       "mealType": "lunch",
       "equipment": "none",
       "dietRestrictions": "vegan" }
+  ],
+
+  "defaultFavorites": [
+    { "title": "Mac N' Cheese",
+      "owner": "john@foo.com" },
+    { "title": "Chocolate Mousse",
+      "owner": "john@foo.com"},
+    { "title": "Spinach Wraps",
+      "owner": "john@foo.com" }
   ]
 }

@@ -21,20 +21,18 @@ class RecipesCollection {
       servings: Number,
       likes: Number,
       owner: String,
+      createdAt: Date,
       mealType: {
         type: String,
         allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],
-        defaultValue: 'breakfast',
       },
       equipment: {
         type: String,
         allowedValues: ['microwave', 'oven', 'stove', 'rice cooker'],
-        defaultValue: 'microwave',
       },
       dietRestrictions: {
         type: String,
         allowedValues: ['none', 'vegan', 'vegetarian', 'lactose-free', 'nut-free', 'gluten-free'],
-        defaultValue: 'none',
       },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

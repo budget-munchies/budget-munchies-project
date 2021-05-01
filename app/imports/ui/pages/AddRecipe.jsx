@@ -1,47 +1,22 @@
 import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
+import { PropTypes } from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
 
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  title: String,
-  image: String,
-  description: String,
-  ingredients: String,
-  instructions: String,
-  servings: Number,
-  mealType: {
-    type: String,
-    allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],
-    defaultValue: 'breakfast',
-  },
-  equipment: {
-    type: String,
-    allowedValues: ['microwave', 'oven', 'stove', 'rice cooker'],
-    defaultValue: 'microwave',
-  },
-  dietRestrictions: {
-    type: String,
-    allowedValues: ['none', 'vegan', 'vegetarian', 'lactose-free', 'nut-free', 'gluten-free'],
-    defaultValue: 'none',
-  },
-});
-
-const bridge = new SimpleSchema2Bridge(formSchema);
+const bridge = new SimpleSchema2Bridge(Recipes.schema);
 
 /** Renders the Page for adding a document. */
 class AddRecipe extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings } = data;
+    const { title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, createdAt, recipeId } = data;
     const owner = Meteor.user().username;
-    Recipes.collection.insert({ title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner },
+    Recipes.collection.insert({ title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner, createdAt, recipeId },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -73,6 +48,9 @@ class AddRecipe extends React.Component {
               <SelectField name='dietRestrictions'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
+              <HiddenField name='owner' value={this.props.owner}/>
+              <HiddenField name='recipeID' value={this.props.recipeId}/>
+              <HiddenField name='createdAt' value={new Date()}/>
             </Segment>
           </AutoForm>
         </Grid.Column>
@@ -80,5 +58,10 @@ class AddRecipe extends React.Component {
     );
   }
 }
+
+AddRecipe.propTypes = {
+  owner: PropTypes.string.isRequired,
+  recipeId: PropTypes.string.isRequired,
+};
 
 export default AddRecipe;
