@@ -1,22 +1,22 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import { Card, Image, Icon, Button, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { Favorites } from '../../api/favorite/Favorite';
 
 /** Component for layout out a recipe Card. */
 class RecipeCard extends React.Component {
-  state = { log: [] }
-
-  handleClick = () => this.updateLog('Button received click with mouse')
+  handleClick = () => this.updateLikes(this.props.recipe._id);
 
   handleKeyPress = (e) => {
     if (e.charCode === 32 || e.charCode === 13) {
       // Prevent the default action to stop scrolling when space is pressed
       e.preventDefault();
-      this.updateLog('Button received click with keyboard');
+      Favorites.insert(
+        <this.props.recipe>
+      );
     }
   }
-
-  updateLog = (message) => this.setState((prevState) => ({ log: [message, ...prevState.log] }))
 
   render() {
     return (
@@ -47,7 +47,7 @@ class RecipeCard extends React.Component {
           </Button>
         </Card.Content>
       </Card>
-    );
+    )
   }
 }
 
