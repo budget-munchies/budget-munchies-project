@@ -6,17 +6,9 @@ import { Favorites } from '../../api/favorite/Favorite';
 
 /** Component for layout out a recipe Card. */
 class RecipeCard extends React.Component {
-  handleClick = () => this.updateLikes(this.props.recipe._id);
+  handleClick = () => this.updateLikes();
 
-  handleKeyPress = (e) => {
-    if (e.charCode === 32 || e.charCode === 13) {
-      // Prevent the default action to stop scrolling when space is pressed
-      e.preventDefault();
-      Favorites.insert(
-        <this.props.recipe>
-      );
-    }
-  }
+  updateLikes = () => (Favorites.insert(this.props.recipe));
 
   render() {
     return (
@@ -47,7 +39,7 @@ class RecipeCard extends React.Component {
           </Button>
         </Card.Content>
       </Card>
-    )
+    );
   }
 }
 
