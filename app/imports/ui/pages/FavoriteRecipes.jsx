@@ -40,9 +40,9 @@ export default withTracker(() => {
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the Recipe documents
-  const recipes = Favorites.collection.find({}).fetch();
+  const favorites = Favorites.collection.find({}).fetch();
   return {
-    recipes,
+    favorites,
     ready,
   };
 })(FavoriteRecipes);
