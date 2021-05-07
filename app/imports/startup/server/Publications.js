@@ -32,6 +32,15 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
   return this.ready();
 });
 
+// allows user to see all Recipes in the database
+// this is used in the browse recipe pages code
+Meteor.publish(Recipes.adminPublicationName, function () {
+  if (this.userId) {
+    return Recipes.collection.find();
+  }
+  return this.ready();
+});
+
 // alanning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
