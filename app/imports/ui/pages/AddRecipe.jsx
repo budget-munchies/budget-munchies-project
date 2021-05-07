@@ -14,9 +14,9 @@ class AddRecipe extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, createdAt, recipeId } = data;
+    const { title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, createdAt } = data;
     const owner = Meteor.user().username;
-    Recipes.collection.insert({ title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner, createdAt, recipeId },
+    Recipes.collection.insert({ title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

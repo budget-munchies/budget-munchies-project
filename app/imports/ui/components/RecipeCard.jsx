@@ -1,5 +1,4 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
 import { Card, Image, Icon, Button, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Favorites } from '../../api/favorite/Favorite';
@@ -8,7 +7,7 @@ import { Favorites } from '../../api/favorite/Favorite';
 class RecipeCard extends React.Component {
   handleClick = () => this.updateLikes();
 
-  updateLikes = () => (Favorites.insert(this.props.recipe));
+  updateLikes = () => (Favorites.collection.insert(this.props.recipe));
 
   render() {
     return (
@@ -28,8 +27,7 @@ class RecipeCard extends React.Component {
             <Button
               icon
               content='Click'
-              onClick={this.handleClick}
-              onKeyPress={this.handleKeyPress}>
+              onClick={this.handleClick}>
               <Icon name='heart'/>
               Like
             </Button>
