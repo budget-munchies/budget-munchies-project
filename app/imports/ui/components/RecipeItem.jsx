@@ -36,6 +36,9 @@ class RecipeItem extends React.Component {
             </Label>
           </Button>
         </Card.Content>
+        <Card.Content extra>
+          Added by: {this.props.recipe.owner}
+        </Card.Content>
       </Card>
     );
   }
