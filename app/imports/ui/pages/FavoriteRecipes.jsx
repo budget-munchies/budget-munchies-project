@@ -1,9 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Card, Loader } from 'semantic-ui-react';
+import { Container, Card, Loader, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { _ } from 'meteor/underscore';
 import { Favorites } from '../../api/favorite/Favorite';
 import { RecipeCard } from '../components/RecipeCard';
 
@@ -18,9 +17,10 @@ class FavoriteRecipes extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container id="favorites-page">
-        <Card.Group>
-          { _.map(this.props.favorites, (recipe, index) => <RecipeCard key={index} recipe={recipe}/>)}
+      <Container id="favorites-recipe-page">
+        <Header as="h2" textAlign="center">My Favorites</Header>
+        <Card.Group itemsPerRow={4}>
+          {this.props.favorites.map((recipe, index) => <RecipeCard key={index} recipe={recipe}/>)}
         </Card.Group>
       </Container>
     );

@@ -14,25 +14,36 @@ class RecipesCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       title: String,
+      date: Date,
       image: String,
       description: String,
-      ingredients: String,
-      instructions: String,
+      ingredients: Array,
+      'ingredients.$': {
+        type: String,
+        label: 'ingredients',
+        optional: false,
+      },
+      instructions: Array,
+      'instructions.$': {
+        type: String,
+        label: 'instructions',
+        optional: false,
+      },
       servings: Number,
-      likes: Number,
-      owner: String,
-      date: Date,
       mealType: {
         type: String,
-        allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],
+        allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert', 'snack'],
+        defaultValue: 'breakfast',
       },
       equipment: {
         type: String,
-        allowedValues: ['microwave', 'oven', 'stove', 'rice cooker'],
+        allowedValues: ['microwave', 'oven', 'stove', 'rice cooker', 'blender', 'none'],
+        defaultValue: 'microwave',
       },
-      dietRestrictions: {
+      dietRestriction: {
         type: String,
         allowedValues: ['none', 'vegan', 'vegetarian', 'lactose-free', 'nut-free', 'gluten-free'],
+        defaultValue: 'none',
       },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

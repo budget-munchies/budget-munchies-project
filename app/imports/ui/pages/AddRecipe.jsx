@@ -1,10 +1,20 @@
 import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
+import {
+  AutoForm,
+  ErrorsField,
+  NumField,
+  HiddenField,
+  SelectField,
+  SubmitField,
+  TextField,
+  DateField,
+  ListField,
+} from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
 
 const bridge = new SimpleSchema2Bridge(Recipes.schema);
@@ -31,21 +41,23 @@ class AddRecipe extends React.Component {
   render() {
     let fRef = null;
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
+    const btmarg = { marginBottom: '25px' };
     return (
-      <Grid container centered>
+      <Grid container id="add-recipe-page" centered>
         <Grid.Column>
           <Header as="h2" textAlign="center" style={headerStyle}>Add Recipe</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
+            <Segment style={btmarg}>
               <TextField name='title'/>
+              <DateField name='date'/>
               <TextField name='image'/>
-              <LongTextField name='description'/>
-              <TextField name='ingredients'/>
-              <LongTextField name='instructions'/>
-              <NumField name='servings' decimal={false}/>
+              <TextField name='description'/>
+              <ListField name='ingredients'/>
+              <ListField name='instructions'/>
+              <NumField name='servings' decimal={false} min={0}/>
               <SelectField name='mealType'/>
               <SelectField name='equipment'/>
-              <SelectField name='dietRestrictions'/>
+              <SelectField name='dietRestriction'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' value={this.props.owner}/>
@@ -59,7 +71,7 @@ class AddRecipe extends React.Component {
 }
 
 AddRecipe.propTypes = {
-  owner: PropTypes.string.isRequired,
+  owner: PropTypes.object.isRequired,
 };
 
 export default AddRecipe;

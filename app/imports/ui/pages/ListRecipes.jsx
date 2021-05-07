@@ -4,7 +4,7 @@ import { Container, Card, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
-import RecipeItem from '../components/RecipeItem';
+import RecipeCard from '../components/RecipeItem';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListRecipes extends React.Component {
@@ -20,7 +20,7 @@ class ListRecipes extends React.Component {
       <Container id="list-stuff-page">
         <Header as="h2" textAlign="center">My Recipes</Header>
         <Card.Group itemsPerRow={4}>
-          {this.props.recipes.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
+          {this.props.recipes.map((recipe, index) => <RecipeCard key={index} recipe={recipe}/>)}
         </Card.Group>
       </Container>
     );
