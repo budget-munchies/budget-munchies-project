@@ -7,7 +7,6 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
 import FavoriteRecipes from '../pages/FavoriteRecipes';
 import Admin from '../pages/Admin';
 import AddRecipe from '../pages/AddRecipe';
@@ -16,6 +15,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import ListRecipes from '../pages/ListRecipes';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -29,7 +29,7 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
-            <ProtectedRoute path="/list" component={ListStuff}/>
+            <ProtectedRoute path="/list" component={ListRecipes}/>
             <ProtectedRoute path="/favorite" component={FavoriteRecipes}/>
             <ProtectedRoute path="/add" component={AddRecipe}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
