@@ -18,37 +18,194 @@
 
   "defaultRecipes": [
     { "title": "Mac N' Cheese",
-      "image": "mac-n-cheese.jpg",
+      "image": "https://wearychef.com/wp-content/uploads/2013/02/mac-and-cheese1.jpg",
+      "date": "Sat Apr 30 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
       "description": "Quick and Easy Mac and Cheese with only 3 ingredients",
-      "ingredients": "Elbow Pasta, American Cheese, Milk",
-      "instructions": "Boil the pasta. Melt the cheese and milk together. Pour over the pasta and mix.",
+      "ingredients": [
+        "1 cup Elbow Pasta",
+        "1/2 cup American Cheese",
+        "4 tbsp Milk"
+      ],
+      "instructions": [
+        "1. Boil the pasta.",
+        "2. Melt the cheese and milk together.",
+        "3. Pour over the pasta and mix."
+      ],
       "servings": 4,
       "likes": 32,
       "owner": "john@foo.com",
       "mealType": "lunch",
       "equipment": "microwave",
       "dietRestrictions": "vegetarian" },
-    { "title": "Chocolate Mousse",
-      "image": "choco-mousse.jpeg",
-      "description": "Decadent and easy chocolate mousse",
-      "ingredients": "Chocolate, Sugar, Milk, Eggs, Flour",
-      "instructions": "Mix all the ingredients together and bake at 350 degrees for 15 minutes.",
-      "servings": 4,
-      "likes": 17,
-      "owner": "john@foo.com",
-      "mealType": "dessert",
-      "equipment": "oven",
-      "dietRestrictions": "vegetarian"},
-    { "title": "Spinach Wraps",
-      "image": "spinach-wraps.jpg",
-      "description": "Simple and healthy wraps to get those veggies in!",
-      "ingredients": "Spinach, Tortillas, Hummus",
-      "instructions": "Spread hummus on the tortilla. Add the spinach and roll it up.",
+    { "title": "Spinach, Hummus & Feta Wrap",
+      "image": "https://www.selmagique.com/wp-content/uploads/2018/04/SPINACH-HUMMUS-FETA-WRAP-hero.jpg",
+      "date": "Sat Apr 30 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "Fresh, flavorful, veggie-packed, and ready in a 10-minute snap.",
+      "ingredients": [
+        "2 whole-grain tortillas",
+        "1/2 cup roasted garlic hummus",
+        "1 small red bell pepper (thinly sliced)",
+        "1 cup baby spinach",
+        "1 ounce crumbled tomato-and-basil feta cheese"
+      ],
+      "instructions": [
+        "1. Spread each flatbread with 1/4 cup hummus, leaving a 1/2-inch border around the edge.",
+        "2. Divide the bell pepper evenly between the flatbreads; top each with 1/2 cup spinach and 2 tablespoons cheese. Starting from one short side, roll up the wraps. Cut each wrap in half, and secure with wooden picks."
+      ],
       "servings": 2,
       "likes": 12,
       "owner": "john@foo.com",
       "mealType": "lunch",
       "equipment": "none",
-      "dietRestrictions": "vegan" }
+      "dietRestrictions": "vegetarian" },
+    {
+      "title": "Bowties and Broccoli",
+      "image": "https://www.budgetbytes.com/wp-content/uploads/2015/09/Bowties-and-Broccoli-front-1.jpg",
+      "date": "Sun May 1 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "A quick and easy pasta recipe that can be cooked in minutes!",
+      "ingredients": [
+        "12 oz. pasta",
+        "1 lb. frozen broccoli florets",
+        "3 Tbsp butter",
+        "3 Tbsp grated Parmesan",
+        "Salt to taste",
+        "Freshly cracked pepper to taste",
+        "1 pinch crushed red pepper (optional)"
+      ],
+      "instructions": [
+        "1. Bring a pot of water to a boil, then add the pasta. Boil until the pasta is al dente (7-10 minutes). Add the frozen broccoli florets to the boiling pasta water, turn off the heat, and let sit for 1-2 minutes, or until the broccoli is tender-crisp. Drain the pasta and broccoli in a colander.",
+        "2. Transfer the pasta and broccoli back to the pot (with the heat off) or to a bowl and add the butter. Toss until the butter has melted and coated everything. Add the Parmesan, salt, freshly cracked pepper, and red pepper flakes, then toss to coat again. Taste and adjust seasoning as needed. Serve immediately."
+      ],
+      "servings": 6,
+      "likes": 0,
+      "mealType": "dinner",
+      "equipment": "stove",
+      "dietRestriction": "none",
+      "owner": "john@foo.com"
+    },
+    {
+      "title":  "Buddha Bowls",
+      "image":  "https://149366112.v2.pressablecdn.com/wp-content/uploads/2020/03/classic-buddha-bowl-scaled-1.jpg",
+      "date": "Sun May 1 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "Nutritious and filling bowls that can be customized to your tastes!",
+      "ingredients": [
+        "1 large sweet potato, peeled and cut into 1/2-inch cubes",
+        "1 large red onion, diced",
+        "3 tbsp. extra-virgin olive oil, divided",
+        "Kosher salt",
+        "Freshly ground black pepper",
+        "1 lb. boneless, skinless chicken breasts",
+        "1/2 tsp. garlic powder",
+        "1/2 tsp. ground ginger",
+        "1 small clove garlic, minced",
+        "2 tbsp. creamy peanut butter",
+        "1/4 c. Juice of 1 lime",
+        "1 tbsp. low-sodium soy sauce",
+        "1 tbsp. honey",
+        "1 tbsp. toasted sesame oil",
+        "4 c. cooked brown rice",
+        "1 avocado, thinly sliced",
+        "2 c. baby spinach",
+        "1 tbsp. Freshly chopped cilantro, for garnish",
+        "1 tsp. Toasted sesame seeds"
+      ],
+      "instructions":  [
+        "1. Preheat oven to 425°. On a large baking sheet, toss sweet potatoes and onion with 1 tablespoon of oil and season with salt and pepper. Bake until tender, 20 to 25 minutes.",
+        "2. Meanwhile, in a large skillet over medium- high heat, heat 1 tablespoon of oil. Season chicken with garlic powder, ginger, salt, and pepper. Cook until golden and no longer pink, 8 minutes per side. Let rest 10 minutes, then slice.",
+        "3. In a small bowl, whisk together garlic, peanut butter, lime juice, soy sauce, and honey. Whisk in sesame oil and remaining 1 tablespoon olive oil until smooth.",
+        "4. Divide rice among four bowls and top each with sweet potato mixture, chicken, avocado, and baby spinach. Sprinkle with cilantro and sesame seeds and drizzle with dressing before serving."],
+      "servings":  4,
+      "likes":  0,
+      "mealType": "lunch",
+      "equipment": "stove",
+      "dietRestriction": "none",
+      "owner": "john@foo.com"
+    },
+    {
+      "title": "Strawberry Yogurt Parfait",
+      "image": "https://i1.wp.com/gratefulgrazer.com/wp-content/uploads/2020/05/Strawberry-Yogurt-Parfait-9.jpg?w=980&ssl=1",
+      "date": "Sun May 1 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "Enjoy a delicious and light breakfast to power you throughout the day!",
+      "ingredients": [
+        "1 cup granola of your choice",
+        "2 (5.3-ounce) containers So Delicious Strawberry Banana Coconutmilk Yogurt Alternative",
+        "1 cup quartered strawberries"
+      ],
+      "instructions": [
+        "1. Add a third of the So Delicious Yogurt Alternative to the bottom of two glasses. Add a third of the granola and a third of the strawberries. Repeat until all of the ingredients are used. You may have some leftover granola to save for another use.",
+        "2. For the crunchiest texture, serve immediately after you assemble the parfaits. If you don’t mind softer granola, tightly cover and refrigerate the prepared parfaits for up to 3 days. Store prepared granola in an airtight container in a cool, dry place for up to 6 months."
+      ],
+      "servings": 2,
+      "likes": 0,
+      "mealType": "breakfast",
+      "equipment": "none",
+      "dietRestriction": "vegan",
+      "owner": "mary@foo.com"
+    },
+    {
+      "title": "Peanut Butter Banana Nice Cream",
+      "image": "https://fitfoodiefinds.com/wp-content/uploads/2019/03/nice-cream-3.jpg",
+      "date": "Sun May 1 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "This Peanut Butter Banana Nice Cream recipe will make your dessert dreams come true!",
+      "ingredients": [
+        "4 cups of frozen sliced bananas",
+        "1/4 cup all-natural peanut butter",
+        "1/2 – 3/4 cup  unsweetened almond milk",
+        "1/3 cup mini chocolate chips"
+      ],
+      "instructions": [
+        "1. Freeze sliced bananas: simply slice bananas evenly and place on a baking sheet covered in parchment paper. Place the entire sheet in the freezer for at least 30 minutes.",
+        "2. Place all ingredients in a high-speed blender or food processor: measure out your frozen sliced bananas, all-natural peanut butter and almond milk and place in your high-speed blender.",
+        "3. Blend it up: blend up all your ingredients until smooth. 4. Serve with more chocolate chips and a drizzle of peanut butter."],
+      "servings": 6,
+      "likes": 0,
+      "mealType": "snack",
+      "equipment": "blender",
+      "dietRestriction": "vegan",
+      "owner": "mary@foo.com"
+    },
+    {
+      "title": "Chocolate No Bake Peanut Butter Balls",
+      "image": "https://fitfoodiefinds.com/wp-content/uploads/2012/12/COCOA-AND-PEANUT-BUTTER-OAT-BALLS-1.jpg",
+      "date": "Sun May 1 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "In under 10 minutes, you can have these chocolate no bake peanut butter balls ready to go for your weekly snack.",
+      "ingredients": [
+        "1 cup rolled oatmeal",
+        "1/4 cup honey or brown rice syrup",
+        "1/4 cup all natural peanut butter",
+        "2 tablespoons cocoa powder",
+        "pinch of salt"
+      ],
+      "instructions": [
+        "1. In a medium-size bowl, mix together all ingredients.",
+        "2. Then wet hands. Use a tablespoon cookie scoop to scoop out dough and roll between your palms to form balls.",
+        "3. Store in the fridge for up to 1 week or in the freezer for up to 3 months."],
+      "servings": 10,
+      "likes": 0,
+      "mealType": "snack",
+      "equipment": "none",
+      "dietRestriction": "vegan",
+      "owner": "mary@foo.com"
+    },
+    { "title": "Chocolate Mousse",
+      "image": "https://cdn.pratico-pratiques.com/app/uploads/sites/2/2018/08/27235937/verrines-de-mousse-au-chocolat.jpeg",
+      "date": "Sat Apr 30 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "Decadent and easy chocolate mousse",
+      "ingredients": [
+        "Chocolate",
+        "Sugar",
+        ",Milk",
+        "Eggs",
+        "Flour"
+      ],
+      "instructions": [
+        "1. Mix all the ingredients together and bake at 350 degrees for 15 minutes."
+      ],
+      "servings": 4,
+      "likes": 17,
+      "owner": "mary@foo.com",
+      "mealType": "dessert",
+      "equipment": "oven",
+      "dietRestrictions": "vegetarian" }
   ]
 }
