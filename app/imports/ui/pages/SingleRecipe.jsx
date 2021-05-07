@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Header, Loader, Grid } from 'semantic-ui-react';
+import { Header, Loader, Grid, Image, List, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
@@ -15,14 +15,49 @@ class SingleRecipe extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    const headerStyle = { paddingTop: '15px', color: '#3E546A' };
+    const headerColor = { color: '#3E546A' };
+    const titleStyle = { color: '#3E546A', paddingTop: '10px', paddingBottom: '10px' };
+    const prettyPadding = { paddingBottom: '20px' };
+    const textColor = { color: '#869eb5' };
     return (
-      <Grid relaxed container id="single-recipe-page">
+      <Grid relaxed container id="single-recipe-page" style={ prettyPadding }>
         <Grid.Row centered>
-          <Header as="h1" style={headerStyle}> {this.props.recipe.title} </Header>
+          <Header as="h1" style={titleStyle}> {this.props.recipe.title} </Header>
         </Grid.Row>
         <Grid.Row>
-
+          <Grid.Column width={8}>
+            <Image
+              floated='left'
+              size='big'
+              src= {this.props.recipe.image}
+            />
+          </Grid.Column>
+          <Grid.Column width={8}>
+            <Segment>
+              <Header as="h2" style={headerColor}>Recipe Description</Header>
+              <p style={textColor}> {this.props.recipe.description} </p>
+              <Header as="h2" style={headerColor}>Meal Type</Header>
+              <p style={textColor}> {this.props.recipe.mealType} </p>
+              <Header as="h2" style={headerColor}>Diet Restrictions</Header>
+              <p style={textColor}> {this.props.recipe.dietRestriction} </p>
+              <Header as="h2" style={headerColor}>Servings</Header>
+              <p style={textColor}> {this.props.recipe.servings} </p>
+            </Segment>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row centered columns={2}>
+          <Grid.Column>
+            <Segment>
+              <Header as="h2" style={headerColor}> Ingredients Needed: </Header>
+              <List size={'large'} bulleted items={this.props.recipe.ingredients} style={textColor}/>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column>
+            <Segment>
+              <Header as="h2" style={headerColor}> Instructions: </Header>
+              <List size={'large'} bulleted items={this.props.recipe.instructions} style={textColor}/>
+            </Segment>
+          </Grid.Column>
         </Grid.Row>
       </Grid>
     );

@@ -28,18 +28,18 @@ class RecipesCollection {
       },
       mealType: {
         type: String,
-        allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert', 'snack'],
-        defaultValue: 'breakfast',
+        allowedValues: ['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Snack'],
+        defaultValue: 'Breakfast',
       },
       equipment: {
         type: String,
-        allowedValues: ['microwave', 'oven', 'stove', 'rice cooker', 'blender', 'none'],
-        defaultValue: 'microwave',
+        allowedValues: ['Microwave', 'Oven', 'Stove', 'Rice cooker', 'Blender', 'None'],
+        defaultValue: 'Microwave',
       },
       dietRestriction: {
         type: String,
-        allowedValues: ['none', 'vegan', 'vegetarian', 'lactose-free', 'nut-free', 'gluten-free'],
-        defaultValue: 'none',
+        allowedValues: ['None', 'Vegan', 'Vegetarian', 'Lactose-free', 'Nut-free', 'Gluten-free'],
+        defaultValue: 'None',
       },
       owner: String,
     }, { tracker: Tracker });

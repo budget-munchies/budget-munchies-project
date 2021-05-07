@@ -96,3 +96,15 @@ h4.ui.header {
 .meta {
   font-family: 'PT Serif', serif;
 }
+
+.ui.centered.card  .content .header a {
+  font-family: 'PT Serif', serif;
+}
+
+.ui.segment .ui.large.bulleted.list .item {
+  font-family: 'PT Serif', serif;
+}
+
+.ui.segment p {
+  font-family: 'PT Serif', serif;
+}

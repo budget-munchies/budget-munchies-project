@@ -35,9 +35,9 @@
       "servings": 4,
       "likes": 32,
       "owner": "john@foo.com",
-      "mealType": "lunch",
-      "equipment": "microwave",
-      "dietRestrictions": "vegetarian" },
+      "mealType": "Lunch",
+      "equipment": "Microwave",
+      "dietRestrictions": "Vegetarian" },
     { "title": "Spinach, Hummus & Feta Wrap",
       "image": "https://www.selmagique.com/wp-content/uploads/2018/04/SPINACH-HUMMUS-FETA-WRAP-hero.jpg",
       "date": "Sat Apr 30 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
@@ -56,9 +56,9 @@
       "servings": 2,
       "likes": 12,
       "owner": "john@foo.com",
-      "mealType": "lunch",
-      "equipment": "none",
-      "dietRestrictions": "vegetarian" },
+      "mealType": "Lunch",
+      "equipment": "None",
+      "dietRestrictions": "Vegetarian" },
     {
       "title": "Bowties and Broccoli",
       "image": "https://www.budgetbytes.com/wp-content/uploads/2015/09/Bowties-and-Broccoli-front-1.jpg",
@@ -79,9 +79,9 @@
       ],
       "servings": 6,
       "likes": 0,
-      "mealType": "dinner",
-      "equipment": "stove",
-      "dietRestriction": "none",
+      "mealType": "Dinner",
+      "equipment": "Stove",
+      "dietRestriction": "None",
       "owner": "john@foo.com"
     },
     {
@@ -117,9 +117,9 @@
         "4. Divide rice among four bowls and top each with sweet potato mixture, chicken, avocado, and baby spinach. Sprinkle with cilantro and sesame seeds and drizzle with dressing before serving."],
       "servings":  4,
       "likes":  0,
-      "mealType": "lunch",
-      "equipment": "stove",
-      "dietRestriction": "none",
+      "mealType": "Lunch",
+      "equipment": "Stove",
+      "dietRestriction": "None",
       "owner": "john@foo.com"
     },
     {
@@ -138,9 +138,9 @@
       ],
       "servings": 2,
       "likes": 0,
-      "mealType": "breakfast",
-      "equipment": "none",
-      "dietRestriction": "vegan",
+      "mealType": "Breakfast",
+      "equipment": "None",
+      "dietRestriction": "Vegan",
       "owner": "mary@foo.com"
     },
     {
@@ -160,9 +160,9 @@
         "3. Blend it up: blend up all your ingredients until smooth. 4. Serve with more chocolate chips and a drizzle of peanut butter."],
       "servings": 6,
       "likes": 0,
-      "mealType": "snack",
-      "equipment": "blender",
-      "dietRestriction": "vegan",
+      "mealType": "Snack",
+      "equipment": "Blender",
+      "dietRestriction": "Vegan",
       "owner": "mary@foo.com"
     },
     {
@@ -183,9 +183,9 @@
         "3. Store in the fridge for up to 1 week or in the freezer for up to 3 months."],
       "servings": 10,
       "likes": 0,
-      "mealType": "snack",
-      "equipment": "none",
-      "dietRestriction": "vegan",
+      "mealType": "Snack",
+      "equipment": "None",
+      "dietRestriction": "Vegan",
       "owner": "mary@foo.com"
     },
     { "title": "Chocolate Mousse",
@@ -205,9 +205,9 @@
       "servings": 4,
       "likes": 17,
       "owner": "mary@foo.com",
-      "mealType": "dessert",
-      "equipment": "oven",
-      "dietRestrictions": "vegetarian" }
+      "mealType": "Dessert",
+      "equipment": "Oven",
+      "dietRestrictions": "Vegetarian" }
   ],
 
   "defaultFavorites": [
