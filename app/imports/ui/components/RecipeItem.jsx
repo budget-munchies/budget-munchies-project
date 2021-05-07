@@ -33,7 +33,7 @@ class RecipeItem extends React.Component {
           </Button>
         </Card.Content>
         <Card.Content extra>
-          Owner: {this.props.recipe.owner}
+          Added by: {this.props.recipe.owner}
         </Card.Content>
       </Card>
     );
