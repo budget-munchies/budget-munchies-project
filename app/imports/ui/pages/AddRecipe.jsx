@@ -14,9 +14,9 @@ class AddRecipe extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, createdAt } = data;
+    const { title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, date } = data;
     const owner = Meteor.user().username;
-    Recipes.collection.insert({ title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner, createdAt },
+    Recipes.collection.insert({ title, description, image, ingredients, instructions, mealType, equipment, dietRestrictions, servings, owner, date },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -49,7 +49,7 @@ class AddRecipe extends React.Component {
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' value={this.props.owner}/>
-              <HiddenField name='createdAt' value={new Date()}/>
+              <HiddenField name='date' value={new Date()}/>
             </Segment>
           </AutoForm>
         </Grid.Column>

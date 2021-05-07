@@ -21,7 +21,7 @@ class RecipesCollection {
       servings: Number,
       likes: Number,
       owner: String,
-      createdAt: Date,
+      date: Date,
       mealType: {
         type: String,
         allowedValues: ['breakfast', 'lunch', 'dinner', 'dessert'],
