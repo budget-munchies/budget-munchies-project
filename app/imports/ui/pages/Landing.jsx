@@ -6,38 +6,34 @@ class Landing extends React.Component {
   render() {
     const midColor = { color: '#95AFC9' };
     const lightColor = { color: '#E3EEFA' };
+    const imgheight = { height: '200px' };
     return (
-      <Grid id='landing-page' >
+      <Grid id='landing-page'>
         <Grid.Row columns={2}>
           <Grid.Column id={'left-landing'} textAlign='center'>
-            <Header as={'h1'} style={lightColor}>BUDGET MUNCHIES</Header>
-            <br/>
+            <Image style={imgheight} src='/images/bm-logotryagain.svg' size={'medium'} centered/>
             <Grid.Row>
               <Icon name={'users'} size={'big'} style={lightColor}/>
-              <Header as={'h3'} style={lightColor}> Cooking Community </Header>
-              <Header as={'h4'} style={lightColor}> This site is a way for college students to connect with others who are interested in saving money and eating healthy. </Header>
+              <Header as={'h2'} style={lightColor}> Cooking Community </Header>
+              <Header as={'h4'} style={lightColor}> This site is a way for college students to connect with others
+                <br/> who are interested in saving money and eating healthy. </Header>
             </Grid.Row>
             <br/>
             <Grid.Row>
               <Icon name={'pencil alternate'} size={'big'} style={lightColor}/>
-              <Header as={'h3'} style={lightColor}> Share Recipes </Header>
-              <Header as={'h4'} style={lightColor}> Recipes will include a title, image, ingredients, instructions, equipment needed, dietary restrictions,
-                and amount of servings. Users can like recipes and save them to make later.
+              <Header as={'h2'} style={lightColor}> Share Recipes </Header>
+              <Header as={'h4'} style={lightColor}> Recipes will include a title, image, ingredients, instructions,
+                <br/> equipment needed, dietary restrictions, and amount of servings. <br/> Users can like recipes
+                and save them to make later.
               </Header>
             </Grid.Row>
             <br/>
-            <Grid.Row>
-              <Icon name={'warehouse'} size={'big'} style={lightColor}/>
-              <Header as={'h3'} style={lightColor}> Connect with Vendors </Header>
-              <Header as={'h4'} style={lightColor}> Vendors can upload items that are in-stock while Users can keep track of when to pick them up.
-              </Header>
-            </Grid.Row>
           </Grid.Column>
-          <Grid.Column id={'right-landing'} >
+          <Grid.Column id={'right-landing'}>
             <Header as={'h1'} style={midColor} textAlign='center'>Best of This Week</Header>
             <Card.Group>
               <Card>
-                <Image src='https://weeattogether.com/wp-content/uploads/2018/02/6-Amazing-Food-Photography-Tricks-You-Need-To-Know-Pancakes.jpg' size={'medium'} />
+                <Image src='https://weeattogether.com/wp-content/uploads/2018/02/6-Amazing-Food-Photography-Tricks-You-Need-To-Know-Pancakes.jpg' size={'medium'} centered />
                 <Card.Content>
                   <Card.Header>Maple Pecan Pancakes</Card.Header>
                   <Card.Meta>
@@ -60,7 +56,7 @@ class Landing extends React.Component {
                 </Card.Content>
               </Card>
               <Card>
-                <Image src='https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2020/Donna-Crous-food-photography/Media/Donna-Crous-food-photography-Popcorn-hand-n-triangle-styling.jpg' size={'medium'} />
+                <Image src='https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2020/Donna-Crous-food-photography/Media/Donna-Crous-food-photography-Popcorn-hand-n-triangle-styling.jpg' size={'medium'} centered/>
                 <Card.Content>
                   <Card.Header>Buttered Popcorn</Card.Header>
                   <Card.Meta>

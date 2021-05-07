@@ -3,27 +3,35 @@ body {
   background-color: #E3EEFA !important;
 }
 
+label {
+  font-family: 'PT Serif', serif;
+}
+
+#button {
+  font-family: 'PT Serif', serif;
+}
+
 /* ids */
 #footer {
   background-color: #3E546A;
+  font-family: 'PT Serif', serif;
 }
 
-#notFound {
-  position: relative;
-  min-height: 70vh;
+#not-found-page {
+  font-family: 'PT Serif', serif;
 }
 
-#notFound p {
-  font-size: xxx-large;
+#not-found-page p {
+  font-size: xx-large;
   font-weight: bold;
   color: #3E546A;
 }
 
-#notFound p.cookies {
+#not-found-page p.cookies {
   font-size: x-large;
 }
 
-#notFound p.credit {
+#not-found-page p.credit {
   font-size: larger;
 }
 
@@ -57,8 +65,34 @@ body {
 /* classes */
 .text {
   color: #e2edf9 !important;
+  font-family: 'PT Serif', serif;
 }
 
 .ui.inverted.menu {
   background-color: #3E546A !important;
+}
+
+h1.ui.header {
+  font-family: 'PT Serif', serif;
+}
+
+h2.ui.header {
+  font-family: 'PT Serif', serif;
+}
+
+h4.ui.header {
+  font-family: 'PT Serif', serif;
+}
+
+.ui.selection.dropdown {
+  font-family: 'PT Serif', serif;
+  font-size: small;
+}
+
+.description {
+  font-family: 'PT Serif', serif;
+}
+
+.meta {
+  font-family: 'PT Serif', serif;
 }

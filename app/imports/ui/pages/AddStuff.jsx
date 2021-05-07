@@ -42,7 +42,7 @@ class AddStuff extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid container centered>
+      <Grid container id="add-stuff-page" centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Add Stuff</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
