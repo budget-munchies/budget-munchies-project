@@ -75,7 +75,7 @@ export default withTracker(({ match }) => {
   //
   const recipeID = match.params._id;
   // Get access to Recipes documents.
-  const subscription = Meteor.subscribe(Recipes.userPublicationName);
+  const subscription = Meteor.subscribe(Recipes.adminPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the Recipe that matches with the recipeID
