@@ -49,7 +49,6 @@ class AddRecipe extends React.Component {
               <SubmitField value='Submit'/>
               <ErrorsField/>
               <HiddenField name='owner' value={this.props.owner}/>
-              <HiddenField name='recipeID' value={this.props.recipeId}/>
               <HiddenField name='createdAt' value={new Date()}/>
             </Segment>
           </AutoForm>
@@ -61,7 +60,6 @@ class AddRecipe extends React.Component {
 
 AddRecipe.propTypes = {
   owner: PropTypes.string.isRequired,
-  recipeId: PropTypes.string.isRequired,
 };
 
 export default AddRecipe;
