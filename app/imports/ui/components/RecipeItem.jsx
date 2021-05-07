@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Icon, Image, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class RecipeItem extends React.Component {
@@ -14,7 +14,11 @@ class RecipeItem extends React.Component {
             size='medium'
             src= {this.props.recipe.image}
           />
-          <Card.Header> {this.props.recipe.title} ({this.props.recipe.mealType}) </Card.Header>
+          <Card.Header>
+            <Link to={`/recipe/${this.props.recipe._id}`}>
+              {this.props.recipe.title} ({this.props.recipe.mealType})
+            </Link>
+          </Card.Header>
           <Card.Meta> Posted on {this.props.recipe.date.toLocaleDateString('en-US')} </Card.Meta>
           <Card.Meta> Special Diet Restrictions: {this.props.recipe.dietRestriction}</Card.Meta>
           <Card.Description>

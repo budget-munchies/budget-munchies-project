@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
 import RecipeItem from '../components/RecipeItem';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a table containing all of the Recipes documents. Use <StuffItem> to render each row. */
 class ListRecipes extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -27,7 +27,7 @@ class ListRecipes extends React.Component {
   }
 }
 
-// Require an array of Stuff documents in the props.
+// Require an array of Recipes documents in the props.
 ListRecipes.propTypes = {
   recipes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
@@ -39,7 +39,7 @@ export default withTracker(() => {
   const subscription = Meteor.subscribe(Recipes.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
-  // Get the Stuff documents
+  // Get the Recipes documents
   const recipes = Recipes.collection.find({}).fetch();
   return {
     recipes,

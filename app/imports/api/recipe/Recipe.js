@@ -17,9 +17,9 @@ class RecipesCollection {
       image: String,
       date: Date,
       description: String,
-      ingredients: Array,
+      ingredients: Array, // chose to use array bc it allows the ingredients to be displayed easier/nicer
       'ingredients.$': String,
-      instructions: Array,
+      instructions: Array, // chose to use array bc it allows the ingredients to be displayed easier/nicer
       'instructions.$': String,
       servings: Number,
       likes: {
