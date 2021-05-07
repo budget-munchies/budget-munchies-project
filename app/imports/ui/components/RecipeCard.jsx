@@ -16,7 +16,7 @@ class RecipeCard extends React.Component {
         <Card.Content>
           <Card.Header>{this.props.recipe.title}</Card.Header>
           <Card.Meta>
-            <span className='date'>Posted on {this.props.recipe.createdAt}</span>
+            <span className='date'>Posted on {this.props.recipe.date}</span>
           </Card.Meta>
           <Card.Description>
             {this.props.recipe.description}
