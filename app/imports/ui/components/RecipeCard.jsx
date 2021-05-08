@@ -8,7 +8,7 @@ import { Favorites } from '../../api/favorite/Favorite';
 class RecipeCard extends React.Component {
   handleClick = () => this.updateLikes();
 
-  updateLikes = () => { (Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner })); this.props.recipe.likes.increment(1); };
+  updateLikes = () => { (Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner })); this.props.recipe.likes++; };
 
   render() {
     return (
