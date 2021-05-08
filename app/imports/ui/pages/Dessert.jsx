@@ -16,9 +16,9 @@ class Dessert extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    const desserts = this.props.recipes.filter(recipe => recipe.mealType === 'dessert');
+    const desserts = this.props.recipes.filter(recipe => recipe.mealType === 'Dessert');
     return (
-      <Container id="list-stuff-page">
+      <Container id="list-dessert-page">
         <Header as="h2" textAlign="center">Desserts</Header>
         <Card.Group itemsPerRow={4}>
           {desserts.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
