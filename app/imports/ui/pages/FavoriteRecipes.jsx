@@ -21,7 +21,7 @@ class FavoriteRecipes extends React.Component {
       <Container id="favorites-recipe-page">
         <Header as="h2" textAlign="center">My Favorites</Header>
         <Card.Group itemsPerRow={4}>
-          {this.props.favorites.map((recipe, index) => <RecipeCard key={index} recipe={this.props.recipes.find(rec => rec._id === recipe.recipeId)}/>} )}
+          {this.props.favorites.map((recipe, index) => <RecipeCard key={index} recipe={this.props.recipes.find(rec => rec._id === recipe.recipeId)}/>)}
         </Card.Group>
       </Container>
     );
