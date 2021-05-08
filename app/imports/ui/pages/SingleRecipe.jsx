@@ -28,7 +28,7 @@ class SingleRecipe extends React.Component {
           <Grid.Column width={8}>
             <Image
               floated='left'
-              size='big'
+              size='large'
               src= {this.props.recipe.image}
             />
           </Grid.Column>
