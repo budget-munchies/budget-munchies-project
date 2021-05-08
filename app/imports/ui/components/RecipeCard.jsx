@@ -1,14 +1,29 @@
 import React from 'react';
 import { Card, Image, Icon, Button, Label } from 'semantic-ui-react';
+import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
 import { Favorites } from '../../api/favorite/Favorite';
+import { Recipes } from '../../api/recipe/Recipe';
 
 /** Component for layout out a recipe Card. */
 class RecipeCard extends React.Component {
   handleClick = () => this.updateLikes();
 
-  updateLikes = () => { (Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner })); this.props.recipe.likes++; };
+  updateLikes = () => {
+    if (!this.props.currentUser.findOne({}).favorites.includes(this.props.recipe._id)) {
+      Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner });
+      Recipes.collection.update(this.props.recipe._id, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Like added successfully', 'success')));
+    } else {
+      Recipes.collection.update(this.props.recipe._id, { $set: { likes: this.props.recipe.likes - 1 } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Like removed successfully', 'success')));
+      Favorites.collection.findOneAndDelete({ recipeId: this.props.recipe._id });
+    }
+  };
 
   render() {
     return (
@@ -26,6 +41,7 @@ class RecipeCard extends React.Component {
         <Card.Content extra>
           <Button as='div' labelPosition='right'>
             <Button
+              toggle
               icon
               onClick={this.handleClick}>
               <Icon name='heart'/>
@@ -43,6 +59,7 @@ class RecipeCard extends React.Component {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object.isRequired,
+  currentUser: Meteor.user() ? Meteor.user().username : '',
 };
 
 export default withRouter(RecipeCard);
