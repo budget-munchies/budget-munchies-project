@@ -3,13 +3,14 @@ import { Button, Card, Icon, Image, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
-/** Renders a sinlge Recipe from the Recipe collection. See pages under the Browse Recipes dropdown
- * menu: pages/Desserts.jsx
- * */
-class RecipeItem extends React.Component {
+/** Renders a Recipe that's associated only with the user. See pages/ListRecipes.jsx. */
+class UserRecipeItem extends React.Component {
   render() {
     return (
-      <Card centered>
+      <Card centered >
+        <Card.Content extra>
+          <Link to={`/edit/${this.props.recipe._id}`}>Edit</Link>
+        </Card.Content>
         <Card.Content>
           <Image
             floated='right'
@@ -47,9 +48,9 @@ class RecipeItem extends React.Component {
 }
 
 // Require a document to be passed to this component.
-RecipeItem.propTypes = {
+UserRecipeItem.propTypes = {
   recipe: PropTypes.object.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
-export default withRouter(RecipeItem);
+export default withRouter(UserRecipeItem);
