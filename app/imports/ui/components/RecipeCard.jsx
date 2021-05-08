@@ -8,7 +8,7 @@ import { Favorites } from '../../api/favorite/Favorite';
 class RecipeCard extends React.Component {
   handleClick = () => this.updateLikes();
 
-  updateLikes = () => (Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner }));
+  updateLikes = () => { (Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner })); this.props.favorite.likes++; };
 
   render() {
     return (
@@ -43,6 +43,7 @@ class RecipeCard extends React.Component {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object.isRequired,
+  favorite: PropTypes.object.isRequired,
 };
 
 export default withRouter(RecipeCard);
