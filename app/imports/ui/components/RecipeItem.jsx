@@ -2,9 +2,15 @@ import React from 'react';
 import { Button, Card, Icon, Image, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { Favorites } from '../../api/favorite/Favorite';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class RecipeItem extends React.Component {
+
+  handleClick = () => this.updateLikes();
+
+  updateLikes = () => (Favorites.collection.insert({ _id: this.props.recipe._id, recipeId: this.props.recipe._id, owner: this.props.recipe.owner }));
+
   render() {
     return (
       <Card centered >
@@ -23,7 +29,9 @@ class RecipeItem extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <Button as='div' labelPosition='right'>
-            <Button icon>
+            <Button
+              icon
+              onClick={this.handleClick}>
               <Icon name='heart'/>
               Like
             </Button>

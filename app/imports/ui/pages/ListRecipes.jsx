@@ -4,7 +4,8 @@ import { Container, Card, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
-import RecipeCard from '../components/RecipeItem';
+import RecipeCard from '../components/RecipeCard';
+import { Favorites } from '../../api/favorite/Favorite';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListRecipes extends React.Component {
@@ -37,12 +38,15 @@ ListRecipes.propTypes = {
 export default withTracker(() => {
   // Get access to Recipes documents.
   const subscription = Meteor.subscribe(Recipes.userPublicationName);
+  const favSubscription = Meteor.subscribe(Favorites.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
+  const favReady = favSubscription.ready();
   // Get the Stuff documents
   const recipes = Recipes.collection.find({}).fetch();
   return {
     recipes,
     ready,
+    favReady,
   };
 })(ListRecipes);
