@@ -4,7 +4,7 @@ import { Container, Card, Loader, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Favorites } from '../../api/favorite/Favorite';
-import { RecipeCard } from '../components/RecipeCard';
+import RecipeCard from '../components/RecipeCard';
 import { Recipes } from '../../api/recipe/Recipe';
 
 /** Renders a group of cards containing all of the Recipe documents. */
