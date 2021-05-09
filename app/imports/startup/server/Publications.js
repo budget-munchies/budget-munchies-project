@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Recipes } from '../../api/recipe/Recipe';
+import { Vendors } from '../../api/vendor/Vendor';
+// import { Vendors } from '../../api/vendor/Vendor';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -32,11 +34,20 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
   return this.ready();
 });
 
-// allows user to see all Recipes in the database
-// this is used in the browse recipe pages code
+// allows user/admin to see all Recipes in the database
+// this is used in the browse recipe pages and the admin pages
 Meteor.publish(Recipes.adminPublicationName, function () {
   if (this.userId) {
     return Recipes.collection.find();
+  }
+  return this.ready();
+});
+
+// allows user/admin to see all Vendors in the database
+// this is used in the ListVendors code
+Meteor.publish(Vendors.adminPublicationName, function () {
+  if (this.userId) {
+    return Vendors.collection.find();
   }
   return this.ready();
 });

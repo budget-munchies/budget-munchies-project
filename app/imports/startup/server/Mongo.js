@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Recipes } from '../../api/recipe/Recipe';
+import { Vendors } from '../../api/vendor/Vendor';
 
 /* eslint-disable no-console */
 
@@ -16,6 +17,12 @@ function addRecipe(data) {
   Recipes.collection.insert(data);
 }
 
+// Initialize the database with a default vendors document.
+function addVendors(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  Vendors.collection.insert(data);
+}
+
 // Initialize the StuffsCollection if empty.
 if (Stuffs.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
@@ -29,5 +36,13 @@ if (Recipes.collection.find().count() === 0) {
   if (Meteor.settings.defaultRecipes) {
     console.log('Creating default recipes.');
     Meteor.settings.defaultRecipes.map(data => addRecipe(data));
+  }
+}
+
+// Initialize the VendorsCollection if empty.
+if (Vendors.collection.find().count() === 0) {
+  if (Meteor.settings.defaultVendors) {
+    console.log('Creating default vendors.');
+    Meteor.settings.defaultVendors.map(data => addVendors(data));
   }
 }

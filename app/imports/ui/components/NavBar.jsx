@@ -29,9 +29,9 @@ class NavBar extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
+            <Menu.Item id="navbar-list-vendors" as={NavLink} activeClassName="active" exact to="/vendors" key='vendors' className='text'> Vendors </Menu.Item>,
             <Menu.Item position="right" as={NavLink} activeClassName="active" exact to="/search" key='search' className='text'><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
         ) : ''}
-        {/* Change admin to vendors and have vendors see statistics on popular food items/ingredients maybe */}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item id="navbar-admin" as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
         ) : ''}
