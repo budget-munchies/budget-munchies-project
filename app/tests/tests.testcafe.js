@@ -2,12 +2,13 @@ import { landingPage } from './landing.page';
 import { signinPage } from './signin.page';
 import { signoutPage } from './signout.page';
 import { navBar } from './navbar.component';
-import { listStuffPage } from './liststuff.page';
 import { addStuffPage } from './addstuff.page';
 import { editStuffPage } from './editstuff.page';
 // eslint-disable-next-line import/named
 import { addRecipePage } from './addrecipe.page';
 import { adminPage } from './admin.page';
+// eslint-disable-next-line import/named
+import { listRecipePage } from './listrecipes.page';
 
 /* global fixture:false, test:false */
 
@@ -30,11 +31,11 @@ test('Test that signin and signout work', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Test the List Stuff page', async (testController) => {
+test('Test the List Recipes page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListStuffPage(testController);
-  await listStuffPage.isDisplayed(testController);
+  await listRecipePage.isDisplayed(testController);
 });
 /* skipped because not needed */
 test.skip('Test the Add Stuff page', async (testController) => {
