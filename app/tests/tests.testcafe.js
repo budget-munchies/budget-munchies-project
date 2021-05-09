@@ -29,8 +29,8 @@ test('Test that signin and signout work', async (testController) => {
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });
-
-test('Test the List Stuff page', async (testController) => {
+/* skipped because not needed */
+test.skip('Test the List Stuff page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListStuffPage(testController);
