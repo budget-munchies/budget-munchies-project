@@ -7,23 +7,23 @@ import { Recipes } from '../../api/recipe/Recipe';
 import RecipeItem from '../components/RecipeItem';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class Dessert extends React.Component {
+class Breakfast extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting Breakfasts</Loader>;
   }
 
   // Render the page once subscriptions have been received.
   renderPage() {
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
     const contPad = { paddingBottom: '25px' };
-    const desserts = this.props.recipes.filter(recipe => recipe.mealType === 'Dessert');
+    const breakfast = this.props.recipes.filter(recipe => recipe.mealType === 'Breakfast');
     return (
-      <Container id="list-dessert-page" style={contPad}>
-        <Header as="h2" textAlign="center" style={headerStyle}> Desserts </Header>
+      <Container id="list-breakfast-page" style={contPad}>
+        <Header as="h2" textAlign="center" style={headerStyle}> Breakfast </Header>
         <Card.Group itemsPerRow={4}>
-          {desserts.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
+          {breakfast.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
         </Card.Group>
       </Container>
     );
@@ -31,7 +31,7 @@ class Dessert extends React.Component {
 }
 
 // Require an array of Stuff documents in the props.
-Dessert.propTypes = {
+Breakfast.propTypes = {
   recipes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -48,4 +48,4 @@ export default withTracker(() => {
     recipes,
     ready,
   };
-})(Dessert);
+})(Breakfast);

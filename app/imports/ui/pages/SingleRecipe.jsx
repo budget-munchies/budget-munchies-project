@@ -16,8 +16,8 @@ class SingleRecipe extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const headerColor = { color: '#3E546A' };
-    const titleStyle = { color: '#3E546A', paddingTop: '10px', paddingBottom: '10px' };
-    const prettyPadding = { paddingBottom: '20px' };
+    const titleStyle = { color: '#3E546A', paddingTop: '15px' };
+    const prettyPadding = { paddingBottom: '25px' };
     const textColor = { color: '#869eb5' };
     return (
       <Grid relaxed container id="single-recipe-page" style={ prettyPadding }>
