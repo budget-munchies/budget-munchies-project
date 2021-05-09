@@ -12,7 +12,7 @@ class RecipeCard extends React.Component {
   handleClick = () => this.updateLikes();
 
   updateLikes = () => {
-    if (!this.props.currentUser.findOne({}).favorites.includes(this.props.recipe._id)) {
+    if (!this.props.currentUser.favorites.findOne( recipeId: { this.props.recipe._id })) {
       Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner });
       Recipes.collection.update(this.props.recipe._id, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
