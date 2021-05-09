@@ -13,7 +13,7 @@ import { adminPage } from './admin.page';
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
-const adCredentials = { username: 'admin@foo.com', password: 'changeme'};
+const adCredentials = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('budget-munchies-project localhost test with default db')
   .page('http://localhost:3000');
@@ -64,4 +64,3 @@ test('Test the admin page', async (testController) => {
   await navBar.gotoAdminPage(testController);
   await adminPage.isDisplayed(testController);
 });
-
