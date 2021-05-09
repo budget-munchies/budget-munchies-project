@@ -16,6 +16,7 @@ class Vendor extends React.Component {
             src= {vend.image}
           />
           <Card.Header> {vend.name} </Card.Header>
+          <br/>
           <Card.Meta>
             <Icon color='red' name='map pin'/>
             {vend.address}
@@ -25,7 +26,8 @@ class Vendor extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a href={vend.link}> Visit them here! </a>
+          {/* eslint-disable-next-line react/jsx-no-target-blank */}
+          <a href={vend.link} target="_blank"> Visit them here! </a>
         </Card.Content>
         {/*
         <Card.vendent extra>

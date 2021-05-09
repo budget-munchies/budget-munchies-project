@@ -17,6 +17,7 @@ import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Dessert from '../pages/Dessert';
 import SingleRecipe from '../pages/SingleRecipe';
+import ListVendors from '../pages/ListVendors';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
             <ProtectedRoute path="/list" component={ListRecipes}/>
             <ProtectedRoute path="/recipe/:_id" component={SingleRecipe}/>
             <ProtectedRoute path="/add" component={AddRecipe}/>
+            <ProtectedRoute path="/vendors" component={ListVendors}/>
             <ProtectedRoute path="/dessert" component={Dessert}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={Admin}/>
