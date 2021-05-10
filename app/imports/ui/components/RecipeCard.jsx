@@ -38,7 +38,6 @@ class RecipeCard extends React.Component {
         <Card.Content extra>
           <Button as='div' labelPosition='right'>
             <Button
-              toggle
               icon
               onClick={this.updateLikes(this.props.recipe._id)}>
               <Icon name='heart'/>
