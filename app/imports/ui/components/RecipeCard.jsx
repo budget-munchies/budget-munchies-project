@@ -56,7 +56,6 @@ class RecipeCard extends React.Component {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object.isRequired,
-  favorite: PropTypes.object.isRequired,
 };
 
 export default withRouter(RecipeCard);
