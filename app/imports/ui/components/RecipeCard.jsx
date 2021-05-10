@@ -3,25 +3,22 @@ import { Card, Image, Icon, Button, Label } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Meteor } from 'meteor/meteor';
 import { Favorites } from '../../api/favorite/Favorite';
 import { Recipes } from '../../api/recipe/Recipe';
 
 /** Component for layout out a recipe Card. */
 class RecipeCard extends React.Component {
-  handleClick = () => this.updateLikes();
-
-  updateLikes = () => {
-    if (!this.props.currentUser.favorites.find( this.props.favorites.recipeId === this.props.recipe._id )) {
-      Favorites.collection.insert({ recipeId: this.props.recipe._id, owner: this.props.recipe.owner });
-      Recipes.collection.update(this.props.recipe._id, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
+  updateLikes = (docID) => {
+    if (!Favorites.collection.find({ recipeId: docID })) {
+      Favorites.collection.insert({ recipeId: docID, owner: this.props.recipe.owner });
+      Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Like added successfully', 'success')));
     } else {
-      Recipes.collection.update(this.props.recipe._id, { $set: { likes: this.props.recipe.likes - 1 } }, (error) => (error ?
+      Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes - 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Like removed successfully', 'success')));
-      Favorites.collection.findOneAndDelete({ recipeId: this.props.recipe._id });
+      Favorites.collection.remove({ recipeId: docID });
     }
   };
 
@@ -43,7 +40,7 @@ class RecipeCard extends React.Component {
             <Button
               toggle
               icon
-              onClick={this.handleClick}>
+              onClick={this.updateLikes(this.props.recipe._id)}>
               <Icon name='heart'/>
               Like
             </Button>
@@ -59,7 +56,6 @@ class RecipeCard extends React.Component {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object.isRequired,
-  currentUser: Meteor.user() ? Meteor.user().username : '',
 };
 
 export default withRouter(RecipeCard);
