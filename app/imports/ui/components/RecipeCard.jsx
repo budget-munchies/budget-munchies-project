@@ -21,7 +21,7 @@ class RecipeCard extends React.Component {
       Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes - 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Like removed successfully', 'success')));
-      Favorites.collection.remove(docID);
+      Favorites.collection.remove({ recipeId: docID });
     }
   };
 
