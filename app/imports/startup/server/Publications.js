@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Recipes } from '../../api/recipe/Recipe';
 import { Vendors } from '../../api/vendor/Vendor';
+import { Comments } from '../../api/comment/Comments';
 // import { Vendors } from '../../api/vendor/Vendor';
 
 // User-level publication.
@@ -48,6 +49,14 @@ Meteor.publish(Recipes.adminPublicationName, function () {
 Meteor.publish(Vendors.adminPublicationName, function () {
   if (this.userId) {
     return Vendors.collection.find();
+  }
+  return this.ready();
+});
+
+// allows anyone with an account to see all comments on Vendors in the database
+Meteor.publish(Comments.adminPublicationName, function () {
+  if (this.userId) {
+    return Comments.collection.find();
   }
   return this.ready();
 });
