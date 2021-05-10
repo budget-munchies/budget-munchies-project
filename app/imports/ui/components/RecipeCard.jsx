@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Image, Icon, Button, Label } from 'semantic-ui-react';
 import swal from 'sweetalert';
+import _ from 'underscore';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Favorites } from '../../api/favorite/Favorite';
@@ -9,7 +10,7 @@ import { Recipes } from '../../api/recipe/Recipe';
 /** Component for layout out a recipe Card. */
 class RecipeCard extends React.Component {
   updateLikes = (docID) => {
-    if (!Favorites.collection.find(docID)) {
+    if ((_.find(Favorites, function (fav) { return fav.recipeId === docID; })) === undefined) {
       Favorites.collection.insert({ recipeId: docID, owner: this.props.recipe.owner });
       Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
