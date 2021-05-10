@@ -9,6 +9,8 @@ import { Recipes } from '../../api/recipe/Recipe';
 
 /** Component for layout out a recipe Card. */
 class RecipeCard extends React.Component {
+  handleClick = () => this.updateLikes(this.props.recipe._id);
+
   updateLikes = (docID) => {
     if ((_.find(Favorites, function (fav) { return fav.recipeId === docID; })) === undefined) {
       Favorites.collection.insert({ recipeId: docID, owner: this.props.recipe.owner });
@@ -39,8 +41,9 @@ class RecipeCard extends React.Component {
         <Card.Content extra>
           <Button as='div' labelPosition='right'>
             <Button
+              toggle
               icon
-              onClick={this.updateLikes(this.props.recipe._id)}>
+              onClick={this.handleClick}>
               <Icon name='heart'/>
               Like
             </Button>
