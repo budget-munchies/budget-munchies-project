@@ -9,7 +9,7 @@ import { Recipes } from '../../api/recipe/Recipe';
 /** Component for layout out a recipe Card. */
 class RecipeCard extends React.Component {
   updateLikes = (docID) => {
-    if (!Favorites.collection.find({ recipeId: docID })) {
+    if (!Favorites.collection.find(docID)) {
       Favorites.collection.insert({ recipeId: docID, owner: this.props.recipe.owner });
       Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
@@ -18,7 +18,7 @@ class RecipeCard extends React.Component {
       Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes - 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Like removed successfully', 'success')));
-      Favorites.collection.remove({ recipeId: docID });
+      Favorites.collection.remove(docID);
     }
   };
 
@@ -56,6 +56,7 @@ class RecipeCard extends React.Component {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object.isRequired,
+  favorite: PropTypes.object.isRequired,
 };
 
 export default withRouter(RecipeCard);
