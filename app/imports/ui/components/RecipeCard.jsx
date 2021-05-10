@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Image, Icon, Button, Label } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import _ from 'underscore';
+import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Favorites } from '../../api/favorite/Favorite';
