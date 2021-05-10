@@ -12,7 +12,7 @@ class RecipeCard extends React.Component {
   handleClick = () => this.updateLikes(this.props.recipe._id);
 
   updateLikes = (docID) => {
-    if ((_.find(Favorites, function (fav) { return fav.recipeId === docID; })) === undefined) {
+    if ((_.find(this.props.favorites, function (fav) { return fav.recipeId === docID; })) === undefined) {
       Favorites.collection.insert({ recipeId: docID, owner: this.props.recipe.owner });
       Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
@@ -59,6 +59,7 @@ class RecipeCard extends React.Component {
 
 RecipeCard.propTypes = {
   recipe: PropTypes.object.isRequired,
+  favorites: PropTypes.array.isRequired,
 };
 
 export default withRouter(RecipeCard);
