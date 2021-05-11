@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Recipes } from '../../api/recipe/Recipe';
 import { Vendors } from '../../api/vendor/Vendor';
+import { Users } from '../../api/user/User';
 
 /* eslint-disable no-console */
 
@@ -21,6 +22,12 @@ function addRecipe(recipe) {
 function addVendors(vendor) {
   console.log(`  Adding: ${vendor.name} (${vendor.owner})`);
   Vendors.collection.insert(vendor);
+}
+
+// Initialize the database with a default profile document.
+function addProfiles(user) {
+  console.log(`  Adding: ${user.email})`);
+  Users.collection.insert(user);
 }
 
 // Initialize the StuffsCollection if empty.
@@ -44,5 +51,13 @@ if (Vendors.collection.find().count() === 0) {
   if (Meteor.settings.defaultVendors) {
     console.log('Creating default vendors.');
     Meteor.settings.defaultVendors.map(vendor => addVendors(vendor));
+  }
+}
+
+// Initialize the ProfilesCollection if empty.
+if (Users.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProfiles) {
+    console.log('Creating default profiles.');
+    Meteor.settings.defaultProfiles.map(user => addProfiles(user));
   }
 }

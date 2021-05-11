@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header, Input } from 'semantic-ui-react';
+import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
@@ -29,8 +29,7 @@ class NavBar extends React.Component {
             </Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>My Recipes</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/vendors" key='vendors' className='text'>Vendors</Menu.Item>,
-            <Menu.Item key='search' position="right"><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/vendors" key='vendors' className='text'>Vendors</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item key='dropdown'>
@@ -42,7 +41,7 @@ class NavBar extends React.Component {
             </Dropdown>
           </Menu.Item>
         ) : ''}
-        <Menu.Item className='text'>
+        <Menu.Item className='text' position='right'>
           {this.props.currentUser === '' ? (
             <Dropdown text="Login" pointing icon={'user'}>
               <Dropdown.Menu id='dropdown'>
@@ -51,10 +50,11 @@ class NavBar extends React.Component {
               </Dropdown.Menu>
             </Dropdown>
           ) : (
-            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing className='text' icon={'user'} as={NavLink} exact to="/userpage">
+            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing className='text' icon={'user'}>
               <Dropdown.Menu id='dropdown'>
-                <Dropdown.Item icon="sign out" text="Sign Out" className='text' id="login-dropdown-sign-out" as={NavLink} exact to="/signout"/>
+                <Dropdown.Item icon="user outline" text="My Profile" className='text' id="login-dropdown-profile" as={NavLink} exact to="/userpage"/>
                 <Dropdown.Item icon="heart outline" text="My Favorites" className='text' id="login-dropdown-favorites" as={NavLink} exact to="/favorite"/>
+                <Dropdown.Item icon="sign out" text="Sign Out" className='text' id="login-dropdown-sign-out" as={NavLink} exact to="/signout"/>
               </Dropdown.Menu>
             </Dropdown>
           )}

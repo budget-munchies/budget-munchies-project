@@ -5,6 +5,7 @@ import { Recipes } from '../../api/recipe/Recipe';
 import { Favorites } from '../../api/favorite/Favorite';
 import { Vendors } from '../../api/vendor/Vendor';
 import { Comments } from '../../api/comment/Comments';
+import { Users } from '../../api/user/User';
 
 // Everyone-level publication
 Meteor.publish(Recipes.worldPublicationName, function () {
@@ -17,6 +18,14 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Stuffs.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Users.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Users.collection.find({ email: username });
   }
   return this.ready();
 });
@@ -46,6 +55,13 @@ Meteor.publish(Favorites.userPublicationName, function () {
 Meteor.publish(Stuffs.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Stuffs.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Users.adminPublicationName, function () {
+  if (this.userId) {
+    return Users.collection.find();
   }
   return this.ready();
 });
