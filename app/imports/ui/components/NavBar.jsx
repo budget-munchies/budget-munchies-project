@@ -9,17 +9,17 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const midColor = { backgroundColor: '#728eaa' };
     return (
       <Menu attached="top" borderless id='navbar'>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header as='h1' className='text'>Budget Munchies</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item id="navbar-add-recipe" as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipe</Menu.Item>,
-            <Menu.Item id="navbar-list-stuff" as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'> My Recipes </Menu.Item>,
+          [<Menu.Item as={NavLink} activeClassName="" exact to="/" className='text' key='home'>Home</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>My Recipes</Menu.Item>,
             <Menu.Item key='dropdown'>
-              <Dropdown pointing text='Browse Recipes'>
+              <Dropdown pointing text='Browse Recipes' className='text'>
                 <Dropdown.Menu id='dropdown'>
                   <Dropdown.Item as={NavLink} activeClassName="active" exact to="/breakfast" key='breakfast' text='Breakfast' />
                   <Dropdown.Item as={NavLink} activeClassName="active" exact to="/lunch" key='lunch' text='Lunch' />
@@ -29,24 +29,25 @@ class NavBar extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
-            <Menu.Item position="right" as={NavLink} activeClassName="active" exact to="/search" key='search' className='text'><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
+            <Menu.Item key='search' position="right"><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
         ) : ''}
         {/* Change admin to vendors and have vendors see statistics on popular food items/ingredients maybe */}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item id="navbar-admin" as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
+          <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
         ) : ''}
-        <Menu.Item className='text' position='right'>
+        <Menu.Item className='text'>
           {this.props.currentUser === '' ? (
-            <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
-              <Dropdown.Menu style={midColor}>
-                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+            <Dropdown text="Login" pointing icon={'user'}>
+              <Dropdown.Menu id='dropdown'>
+                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" className='text' as={NavLink} exact to="/signin"/>
+                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" className='text' as={NavLink} exact to="/signup"/>
               </Dropdown.Menu>
             </Dropdown>
           ) : (
-            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" className='text' icon={'user'}>
-              <Dropdown.Menu>
-                <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
+            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing className='text' icon={'user'}>
+              <Dropdown.Menu id='dropdown'>
+                <Dropdown.Item icon="sign out" text="Sign Out" className='text' id="login-dropdown-sign-out" as={NavLink} exact to="/signout"/>
+                <Dropdown.Item icon="heart outline" text="My Favorites" className='text' id="login-dropdown-favorites" as={NavLink} exact to="/favorite"/>
               </Dropdown.Menu>
             </Dropdown>
           )}

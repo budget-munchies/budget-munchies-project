@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
 import RecipeItem from '../components/RecipeItem';
+import { Favorites } from '../../api/favorite/Favorite';
 
 /** Renders a table containing all of the Recipes documents. Use <StuffItem> to render each row. */
 class ListRecipes extends React.Component {
@@ -39,9 +40,10 @@ ListRecipes.propTypes = {
 export default withTracker(() => {
   // Get access to Recipes documents.
   const subscription = Meteor.subscribe(Recipes.userPublicationName);
+  const favSubscription = Meteor.subscribe(Favorites.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready();
-  // Get the Recipes documents
+  const ready = subscription.ready() && favSubscription.ready();
+  // Get the Stuff documents
   const recipes = Recipes.collection.find({}).fetch();
   return {
     recipes,

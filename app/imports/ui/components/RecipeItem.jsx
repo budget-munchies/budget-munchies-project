@@ -1,10 +1,32 @@
 import React from 'react';
 import { Button, Card, Icon, Image, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import { Recipes } from '../../api/recipe/Recipe';
+import { Favorites } from '../../api/favorite/Favorite';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class RecipeItem extends React.Component {
+  handleClick = () => this.updateLikes(this.props.recipe._id);
+
+  updateLikes = (docID) => {
+    if (this.props.favorites.find(favorite => (favorite.recipeId === docID)) === undefined) {
+      Favorites.collection.insert({ recipeId: docID, owner: Meteor.user().username });
+      Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Like added successfully', 'success')));
+    } else {
+      const fav = this.props.favorites.find(favorite => (favorite.recipeId === docID))._id;
+      Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes - 1 } }, (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Like removed successfully', 'success')));
+      Favorites.collection.remove(fav);
+    }
+  };
+
   render() {
     return (
       <Card centered >
@@ -27,7 +49,9 @@ class RecipeItem extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <Button as='div' labelPosition='right'>
-            <Button icon>
+            <Button
+              icon
+              onClick={this.handleClick}>
               <Icon name='heart'/>
               Like
             </Button>
@@ -44,10 +68,23 @@ class RecipeItem extends React.Component {
   }
 }
 
-// Require a document to be passed to this component.
 RecipeItem.propTypes = {
   recipe: PropTypes.object.isRequired,
+  favorites: PropTypes.array.isRequired,
 };
 
-// Wrap this component in withRouter since we use the <Link> React Router element.
-export default withRouter(RecipeItem);
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Recipes.adminPublicationName);
+  const subscription2 = Meteor.subscribe(Favorites.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready() && subscription2.ready();
+  // Get the Stuff documents
+  const recipes = Recipes.collection.find({}).fetch();
+  const favorites = Favorites.collection.find({}).fetch();
+  return {
+    recipes,
+    ready,
+    favorites,
+  };
+})(RecipeItem);
