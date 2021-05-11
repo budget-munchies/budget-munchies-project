@@ -4,6 +4,11 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Recipes } from '../../api/recipe/Recipe';
 import { Favorites } from '../../api/favorite/Favorite';
 
+// Everyone-level publication
+Meteor.publish(Recipes.worldPublicationName, function () {
+  return Recipes.collection.find();
+});
+
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
 Meteor.publish(Stuffs.userPublicationName, function () {

@@ -17,9 +17,11 @@ class FavoriteRecipes extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
+    const headerStyle = { paddingTop: '15px', color: '#3E546A' };
+    const contPad = { paddingBottom: '25px' };
     return (
-      <Container id="favorites-recipe-page">
-        <Header as="h2" textAlign="center">My Favorites</Header>
+      <Container id="favorites-recipe-page" style={contPad}>
+        <Header as="h2" textAlign="center" style={headerStyle}>My Favorites</Header>
         <Card.Group itemsPerRow={4}>
           {this.props.favorites.map((recipe, index) => <RecipeItem key={index} recipe={this.props.recipes.find(rec => rec._id === recipe.recipeId)}/>)}
         </Card.Group>
@@ -41,8 +43,7 @@ export default withTracker(() => {
   const subscription = Meteor.subscribe(Favorites.userPublicationName);
   const subscription2 = Meteor.subscribe(Recipes.adminPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription.ready();
-  const ready2 = subscription2.ready();
+  const ready = subscription.ready() && subscription2.ready();
   // Get the Recipe documents
   const favorites = Favorites.collection.find({}).fetch();
   const recipes = Recipes.collection.find({}).fetch();
@@ -50,6 +51,5 @@ export default withTracker(() => {
     favorites,
     recipes,
     ready,
-    ready2,
   };
 })(FavoriteRecipes);

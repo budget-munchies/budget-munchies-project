@@ -18,6 +18,49 @@
   ],
 
   "defaultRecipes": [
+    { "title": "Buttered Popcorn",
+      "image": "https://cdn-7.nikon-cdn.com/Images/Learn-Explore/Photography-Techniques/2020/Donna-Crous-food-photography/Media/Donna-Crous-food-photography-Popcorn-hand-n-triangle-styling.jpg",
+      "date": "Sat Apr 13 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "A healthy, budget-friendly, addicting snack for after class",
+      "ingredients": [
+        "1 Microwave Popcorn Bag",
+        "1/4 cup Butter",
+        "4 tbsp Milk"
+      ],
+      "instructions": [
+        "1. Pop the popcorn in a microwave.",
+        "2. Melt the butter and mix together.",
+        "3. Enjoy."
+      ],
+      "servings": 2,
+      "likes": 5,
+      "owner": "john@foo.com",
+      "mealType": "Snack",
+      "equipment": "Microwave",
+      "dietRestrictions": "Vegetarian" },
+    { "title": "Maple Pecan Pancakes",
+      "image": "https://weeattogether.com/wp-content/uploads/2018/02/6-Amazing-Food-Photography-Tricks-You-Need-To-Know-Pancakes.jpg",
+      "date": "Sat Apr 15 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
+      "description": "College student-friendly maple pecan pancakes made from scratch",
+      "ingredients": [
+        "1 cup All Purpose Flour",
+        "1/2 cup Pecans",
+        "1/2 cup Milk",
+        "1 Egg",
+        "Pinch of Salt"
+      ],
+      "instructions": [
+        "1. Chop the pecans.",
+        "2. Mix together the ingredients in a large bowl.",
+        "3. Pour into small circles on a skillet over medium heat.",
+        "4. When the sides bubble, flip and wait till it's golden brown."
+      ],
+      "servings": 4,
+      "likes": 0,
+      "owner": "mary@foo.com",
+      "mealType": "Breakfast",
+      "equipment": "Stove",
+      "dietRestrictions": "None" },
     { "title": "Mac N' Cheese",
       "image": "https://wearychef.com/wp-content/uploads/2013/02/mac-and-cheese1.jpg",
       "date": "Sat Apr 30 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
@@ -33,7 +76,7 @@
         "3. Pour over the pasta and mix."
       ],
       "servings": 4,
-      "likes": 0,
+      "likes": 9,
       "owner": "john@foo.com",
       "mealType": "Lunch",
       "equipment": "Microwave",
