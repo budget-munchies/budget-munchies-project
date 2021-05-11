@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Header, Input } from 'semantic-ui-react';
+import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
+    const midColor = { backgroundColor: '#7f9ab5' };
     return (
       <Menu attached="top" borderless id='navbar'>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
@@ -30,7 +31,7 @@ class NavBar extends React.Component {
             <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>My Recipes</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/vendors" key='vendors' className='text'>Vendors</Menu.Item>,
-            <Menu.Item key='search' position="right"><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
+          ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item key='dropdown'>
@@ -42,18 +43,18 @@ class NavBar extends React.Component {
             </Dropdown>
           </Menu.Item>
         ) : ''}
-        <Menu.Item className='text'>
+        <Menu.Item className='text' position='right'>
           {this.props.currentUser === '' ? (
-            <Dropdown text="Login" pointing icon={'user'}>
-              <Dropdown.Menu id='dropdown'>
-                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" className='text' as={NavLink} exact to="/signin"/>
-                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" className='text' as={NavLink} exact to="/signup"/>
+            <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
+              <Dropdown.Menu style={midColor}>
+                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
+                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
               </Dropdown.Menu>
             </Dropdown>
           ) : (
-            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing className='text' icon={'user'}>
-              <Dropdown.Menu id='dropdown'>
-                <Dropdown.Item icon="sign out" text="Sign Out" className='text' id="login-dropdown-sign-out" as={NavLink} exact to="/signout"/>
+            <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" className='text' icon={'user'}>
+              <Dropdown.Menu style={midColor}>
+                <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
                 <Dropdown.Item icon="heart outline" text="My Favorites" className='text' id="login-dropdown-favorites" as={NavLink} exact to="/favorite"/>
               </Dropdown.Menu>
             </Dropdown>

@@ -17,11 +17,11 @@ class Dessert extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
-    const contPad = { paddingBottom: '25px' };
+    const contPad = { paddingBottom: '50px' };
     const desserts = this.props.recipes.filter(recipe => recipe.mealType === 'Dessert');
     return (
       <Container id="list-dessert-page" style={contPad}>
-        <Header as="h2" textAlign="center" style={headerStyle}> Desserts </Header>
+        <Header as="h1" textAlign="center" style={headerStyle}> Desserts </Header>
         <Card.Group itemsPerRow={4}>
           {desserts.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
         </Card.Group>

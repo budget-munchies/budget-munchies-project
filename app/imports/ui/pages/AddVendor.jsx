@@ -46,11 +46,11 @@ class AddVendor extends React.Component {
   render() {
     let fRef = null;
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
-    const btmarg = { marginBottom: '25px' };
+    const btmarg = { marginBottom: '50px' };
     return (
       <Grid container id="add-vendor-page" centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center" style={headerStyle}>Add Vendor</Header>
+          <Header as="h1" textAlign="center" style={headerStyle}>Add Vendor</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment style={btmarg}>
               <TextField name='name'/>

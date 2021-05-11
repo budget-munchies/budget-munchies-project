@@ -17,10 +17,11 @@ class AllRecipes extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
+    const contPad = { paddingBottom: '50px' };
 
     return (
-      <Container id="all-recipes-page">
-        <Header as="h2" textAlign="center" style={headerStyle}> All Recipes </Header>
+      <Container id="all-recipes-page" style={contPad}>
+        <Header as="h1" textAlign="center" style={headerStyle}> All Recipes </Header>
         <Card.Group itemsPerRow={4}>
           {this.props.recipes.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
         </Card.Group>

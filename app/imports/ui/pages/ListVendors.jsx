@@ -18,10 +18,10 @@ class ListVendors extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
-
+    const contPad = { paddingBottom: '25px' };
     return (
-      <Container id="list-vendors-page">
-        <Header as="h2" textAlign="center" style={headerStyle}> Recommended Vendors </Header>
+      <Container id="list-vendors-page" style={contPad}>
+        <Header as="h1" textAlign="center" style={headerStyle}> Recommended Vendors </Header>
         <Card.Group itemsPerRow={4}>{
           this.props.vendors.map((vendor, index) => <VendorCard key={index} vendor={vendor}
             comment={this.props.comments.filter(comment => (comment.vendorId === vendor._id))}

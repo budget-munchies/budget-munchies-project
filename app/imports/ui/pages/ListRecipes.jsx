@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Card, Header, Loader } from 'semantic-ui-react';
+import { _ } from 'meteor/underscore';
+import { Container, Card, Header, Loader, Image } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
-
 import RecipeItem from '../components/RecipeItem';
 import { Favorites } from '../../api/favorite/Favorite';
 
@@ -21,19 +21,33 @@ class ListRecipes extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
+    // styles
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
-    const contPad = { paddingBottom: '25px' };
+    const contPad = { paddingBottom: '50px' };
+    // array of all recipes from the current user
+    const userRecipes = _.filter(this.props.recipes, function (recipe) {
+      return recipe.owner === Meteor.user().username;
+    });
     return (
       <Container id="list-recipes-page" style={contPad}>
-        <Header as="h2" textAlign="center" style={headerStyle}> My Recipes </Header>
+        <Header as="h1" textAlign="center" style={headerStyle}> My Recipes </Header>
         <Card.Group itemsPerRow={4}>
-          {this.props.recipes.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
+          {((_.size(userRecipes) > 0) ?
+            (this.props.recipes.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)) :
+            (<Container textAlign='center'>
+              <Header as='h3' style={headerStyle}>
+                Oops, you haven&apos;t added any recipes yet!
+                <br/>
+                Head over to Add Recipes to post your yummy recipes.
+              </Header>
+              <Image style={contPad} centered size='medium' src='https://media0.giphy.com/media/cJYy5eegnMXuaDybIR/giphy.gif'/>
+            </Container>)
+          )}
         </Card.Group>
       </Container>
     );
   }
 }
-
 // Require an array of Recipes documents in the props.
 ListRecipes.propTypes = {
   recipes: PropTypes.array.isRequired,

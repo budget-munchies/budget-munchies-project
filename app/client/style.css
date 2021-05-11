@@ -1,18 +1,32 @@
 /* elements */
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* we prob dont need this
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+*/
+
 body {
+  margin: 0;
   background-color: #E3EEFA !important;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 label {
   font-family: 'PT Serif', serif;
 }
 
-#button {
-  font-family: 'PT Serif', serif;
-}
-
 /* ids */
 #footer {
+  padding: 1rem;
   background-color: #3E546A;
   font-family: 'PT Serif', serif;
 }
@@ -36,7 +50,7 @@ label {
 }
 
 #landing-page #left-landing {
-  background-color: #95AFC9 !important;
+  background-color: #7f9ab5 !important;
   padding-top: 30px;
   padding-bottom: 100px;
   padding-left: 25px;
@@ -54,12 +68,16 @@ label {
 }
 
 #dropdown {
-  background-color: #728eaa !important;
+  background-color: #7f9ab5 !important;
   color: #e2edf9 !important;
 }
 
 #login-dropdown-signout {
   color: #e2edf9 !important;
+}
+
+#button {
+  font-family: 'PT Serif', serif;
 }
 
 /* classes */
@@ -77,6 +95,10 @@ h1.ui.header {
 }
 
 h2.ui.header {
+  font-family: 'PT Serif', serif;
+}
+
+h3.ui.header {
   font-family: 'PT Serif', serif;
 }
 

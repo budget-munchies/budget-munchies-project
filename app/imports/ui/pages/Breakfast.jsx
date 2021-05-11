@@ -17,11 +17,11 @@ class Breakfast extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
-    const contPad = { paddingBottom: '25px' };
+    const contPad = { paddingBottom: '50px' };
     const breakfast = this.props.recipes.filter(recipe => recipe.mealType === 'Breakfast');
     return (
       <Container id="list-breakfast-page" style={contPad}>
-        <Header as="h2" textAlign="center" style={headerStyle}> Breakfast </Header>
+        <Header as="h1" textAlign="center" style={headerStyle}> Breakfast </Header>
         <Card.Group itemsPerRow={4}>
           {breakfast.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
         </Card.Group>

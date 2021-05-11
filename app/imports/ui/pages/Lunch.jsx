@@ -17,11 +17,11 @@ class Lunch extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     const headerStyle = { paddingTop: '15px', color: '#3E546A' };
-    const contPad = { paddingBottom: '25px' };
+    const contPad = { paddingBottom: '50px' };
     const lunches = this.props.recipes.filter(recipe => recipe.mealType === 'Lunch');
     return (
       <Container id="list-lunch-page" style={contPad}>
-        <Header as="h2" textAlign="center" style={headerStyle}>Lunches</Header>
+        <Header as="h1" textAlign="center" style={headerStyle}>Lunches</Header>
         <Card.Group itemsPerRow={4}>
           {lunches.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
         </Card.Group>

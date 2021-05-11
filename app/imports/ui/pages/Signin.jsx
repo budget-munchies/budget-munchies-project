@@ -40,12 +40,15 @@ export default class Signin extends React.Component {
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
+
+    const headerStyle = { color: '#3E546A' };
+    const contPad = { paddingTop: '25px', paddingBottom: '100px' };
     // Otherwise return the Login form.
     return (
-      <Container id="signin-page">
+      <Container id="signin-page" style={contPad}>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>
+            <Header as="h2" textAlign="center" style={headerStyle}>
               Login to your account
             </Header>
             <Form onSubmit={this.submit}>

@@ -39,7 +39,6 @@ class RecipeItem extends React.Component {
           </Card.Content>
         ) : ''}
         <Image
-          rounded
           fluid
           src= {this.props.recipe.image}
         />
