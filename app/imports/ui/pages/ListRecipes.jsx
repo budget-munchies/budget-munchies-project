@@ -4,9 +4,10 @@ import { Container, Card, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
-import RecipeItem from '../components/RecipeItem';
+import UserRecipeItem from '../components/UserRecipeItem';
 
-/** Renders a table containing all of the Recipes documents. Use <StuffItem> to render each row. */
+/** Renders a table containing all of the Recipes documents associated with its creator.
+ * Use <UserRecipeItem> to render each row. */
 class ListRecipes extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -22,7 +23,7 @@ class ListRecipes extends React.Component {
       <Container id="list-stuff-page">
         <Header as="h2" textAlign="center" style={headerStyle}> My Recipes </Header>
         <Card.Group itemsPerRow={4}>
-          {this.props.recipes.map((recipe, index) => <RecipeItem key={index} recipe={recipe}/>)}
+          {this.props.recipes.map((recipe, index) => <UserRecipeItem key={index} recipe={recipe}/>)}
         </Card.Group>
       </Container>
     );

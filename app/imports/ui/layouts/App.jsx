@@ -10,7 +10,6 @@ import Landing from '../pages/Landing';
 import Admin from '../pages/Admin';
 import AddRecipe from '../pages/AddRecipe';
 import ListRecipes from '../pages/ListRecipes';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -20,6 +19,7 @@ import SingleRecipe from '../pages/SingleRecipe';
 import ListVendors from '../pages/ListVendors';
 import AddVendor from '../pages/AddVendor';
 import AllRecipes from '../pages/AllRecipes';
+import EditRecipe from '../pages/EditRecipe';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -38,7 +38,7 @@ class App extends React.Component {
             <ProtectedRoute path="/add" component={AddRecipe}/>
             <ProtectedRoute path="/vendors" component={ListVendors}/>
             <ProtectedRoute path="/dessert" component={Dessert}/>
-            <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+            <ProtectedRoute path="/edit/:_id" component={EditRecipe}/>
             <AdminProtectedRoute path="/admin" component={Admin}/>
             <AdminProtectedRoute path="/allrecipes" component={AllRecipes}/>
             <AdminProtectedRoute path="/addvendor" component={AddVendor}/>

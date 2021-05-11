@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
 import RecipeItem from '../components/RecipeItem';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders all recipes with the mealType of Dessert. Use <RecipeItem> to render each row. */
 class Dessert extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
