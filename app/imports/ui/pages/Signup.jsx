@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import { Users } from '../../api/user/User';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -19,14 +22,20 @@ class Signup extends React.Component {
     this.setState({ [name]: value });
   }
 
-  /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
+  /* Handle Signup submission. Create user account and a user profile entry, then redirect to the home page. */
   submit = () => {
     const { email, password } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: '', redirectToReferer: true });
+        Users.collection.insert({ firstName: email.substring(0, email.indexOf('@')), email }, (err2) => {
+          if (err2) {
+            this.setState({ error: err2.reason });
+          } else {
+            this.setState({ error: '', redirectToReferer: true });
+          }
+        });
       }
     });
   }
@@ -97,4 +106,13 @@ Signup.propTypes = {
   location: PropTypes.object,
 };
 
-export default Signup;
+export default withTracker(() => {
+  // Get access to Recipes documents.
+  const subscription = Meteor.subscribe(Users.adminPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the Stuff documents
+  return {
+    ready,
+  };
+})(Signup);

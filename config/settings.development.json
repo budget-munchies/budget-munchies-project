@@ -10,6 +10,12 @@
     { "email": "mary@foo.com", "password": "changeme" }
   ],
 
+  "defaultProfiles": [
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Admin", "email": "admin@foo.com", "year": "N/A", "interests": [ "Cooking" ], "bio": "I love cooking!" },
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "John", "lastName": "Stamos", "email": "john@foo.com", "year": "Senior", "interests": [ "Cooking" ], "bio": "I love sharing recipes!" },
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg","firstName": "Mary", "lastName": "Smith", "email": "mary@foo.com", "year": "Sophomore", "interests": [ "Cooking" ], "bio": "I love eating delicious food!" }
+  ],
+
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },

@@ -68,7 +68,7 @@ class RecipeItem extends React.Component {
           </Button>
         </Card.Content>
         <Card.Content extra>
-          Added by: {this.props.recipe.owner}
+          <Link to={`/userpage/${this.props.recipe.owner}`}>Added by: {this.props.recipe.owner}</Link>
         </Card.Content>
       </Card>
     );
