@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import RecipeItem from '../components/RecipeItem';
+import RecipeCard from '../components/RecipeCard';
 import { Recipes } from '../../api/recipe/Recipe';
 
 /** A simple static component to render some text for the landing page. */
@@ -21,7 +21,7 @@ class Landing extends React.Component {
     return (
       <Grid id='landing-page'>
         <Grid.Row columns={2}>
-          <Grid.Column id={'left-landing'} textAlign='center'>
+          <Grid.Column width={6} id={'left-landing'} textAlign='center'>
             <Image style={imgheight} src='/images/bm-logotryagain.svg' size={'medium'} centered/>
             <Grid.Row>
               <Icon name={'users'} size={'big'} style={lightColor}/>
@@ -49,12 +49,13 @@ class Landing extends React.Component {
             </Grid.Row>
             <br/>
           </Grid.Column>
-          <Grid.Column id={'right-landing'}>
+          <Grid.Column width={10} id={'right-landing'}>
             <Header as={'h1'} style={midColor} textAlign='center'>Best of This Week</Header>
             <Card.Group>
-              <Card.Group itemsPerRow={2}>
-                <RecipeItem recipe={bestRec[bestRec.length - 1]}/>
-                <RecipeItem recipe={bestRec[bestRec.length - 2]}/>
+              <Card.Group itemsPerRow={3}>
+                <RecipeCard recipe={bestRec[bestRec.length - 1]}/>
+                <RecipeCard recipe={bestRec[bestRec.length - 2]}/>
+                <RecipeCard recipe={bestRec[bestRec.length - 3]}/>
               </Card.Group>
             </Card.Group>
           </Grid.Column>

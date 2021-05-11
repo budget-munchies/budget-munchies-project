@@ -29,7 +29,7 @@ class RecipeCard extends React.Component {
   render() {
     return (
       <Card centered>
-        <Image fluid src={this.props.recipe.image}/>
+        <Image rounded fluid src={this.props.recipe.image}/>
         <Card.Content>
           <Card.Header>{this.props.recipe.title}</Card.Header>
           <Card.Meta>

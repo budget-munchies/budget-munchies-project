@@ -38,12 +38,12 @@ class RecipeItem extends React.Component {
             <Link to={`/editrecipe/${this.props.recipe._id}`}>Edit</Link>
           </Card.Content>
         ) : ''}
+        <Image
+          rounded
+          fluid
+          src= {this.props.recipe.image}
+        />
         <Card.Content>
-          <Image
-            floated='right'
-            size='medium'
-            src= {this.props.recipe.image}
-          />
           <Card.Header>
             <Link to={`/recipe/${this.props.recipe._id}`}>
               {this.props.recipe.title} ({this.props.recipe.mealType})
