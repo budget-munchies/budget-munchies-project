@@ -5,9 +5,9 @@
   },
 
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" },
-    { "email": "mary@foo.com", "password": "changeme" }
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg", "first name": "Admin", "lastName": " ","email": "admin@foo.com", "password": "changeme", "year": "Sophomore", "interests": "Cooking", "bio": "I love eating!", "role": "admin" },
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg", "firstName": "John", "lastName": "Stamos","email": "john@foo.com", "password": "changeme", "year": "Freshman", "interests": "Cooking", "bio": "I love cooking!" },
+    { "image": "https://t4.ftcdn.net/jpg/04/10/43/77/360_F_410437733_hdq4Q3QOH9uwh0mcqAhRFzOKfrCR24Ta.jpg", "firstName": "Mary", "lastName": "Smith","email": "mary@foo.com", "password": "changeme", "year": "Sophomore", "interests": "Cooking", "bio": "I love shopping!" }
   ],
 
   "defaultData": [
