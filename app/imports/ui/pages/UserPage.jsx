@@ -28,11 +28,11 @@ class UserPage extends React.Component {
           <Grid.Column width={10}>
             <Container text className='description'>
               <Header as='h2' style={ headerColor }>{this.props.user.firstName} {this.props.user.lastName}</Header>
-              <Header as='h4' style={ headerColor }>Year</Header>
+              <Header as='h3' style={ headerColor }>Year</Header>
               <p style={textColor}>{this.props.user.year}</p>
-              <Header as='h4' style={ headerColor }>Interests</Header>
+              <Header as='h3' style={ headerColor }>Interests</Header>
               <List style={textColor} bulleted items={this.props.user.interests}/>
-              <Header as='h4' style={ headerColor }>Bio</Header>
+              <Header as='h3' style={ headerColor }>Bio</Header>
               <p style={textColor}>{this.props.user.bio}</p>
             </Container>
           </Grid.Column>
