@@ -7,8 +7,11 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { Recipes } from '../../api/recipe/Recipe';
 import { Favorites } from '../../api/favorite/Favorite';
+// import EditRecipe from '../pages/EditRecipe';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single Recipe from the Recipe collection. See pages under the Browse Recipes dropdown
+ * menu: pages/Desserts.jsx
+ * */
 class RecipeItem extends React.Component {
   handleClick = () => this.updateLikes(this.props.recipe._id);
 
@@ -29,7 +32,12 @@ class RecipeItem extends React.Component {
 
   render() {
     return (
-      <Card centered >
+      <Card centered>
+        { Meteor.user().username === this.props.recipe.owner ? (
+          <Card.Content extra>
+            <Link to={`/editrecipe/${this.props.recipe._id}`}>Edit</Link>
+          </Card.Content>
+        ) : ''}
         <Card.Content>
           <Image
             floated='right'

@@ -4,10 +4,14 @@ import { Container, Card, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Recipes } from '../../api/recipe/Recipe';
+
 import RecipeItem from '../components/RecipeItem';
 import { Favorites } from '../../api/favorite/Favorite';
 
-/** Renders a table containing all of the Recipes documents. Use <StuffItem> to render each row. */
+// import UserRecipeItem from '../components/UserRecipeItem';
+
+/** Renders a table containing all of the Recipes documents associated with its creator.
+ * Use <UserRecipeItem> to render each row. */
 class ListRecipes extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.

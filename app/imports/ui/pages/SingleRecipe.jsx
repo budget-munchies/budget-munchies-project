@@ -42,6 +42,8 @@ class SingleRecipe extends React.Component {
               <p style={textColor}> {this.props.recipe.dietRestriction} </p>
               <Header as="h2" style={headerColor}>Servings</Header>
               <p style={textColor}> {this.props.recipe.servings} </p>
+              <Header as="h2" style={headerColor}>Equipment Needed</Header>
+              <p style={textColor}> {this.props.recipe.equipment} </p>
             </Segment>
           </Grid.Column>
         </Grid.Row>

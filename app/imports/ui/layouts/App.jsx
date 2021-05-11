@@ -11,7 +11,6 @@ import FavoriteRecipes from '../pages/FavoriteRecipes';
 import Admin from '../pages/Admin';
 import AddRecipe from '../pages/AddRecipe';
 import ListRecipes from '../pages/ListRecipes';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -22,6 +21,7 @@ import Dinner from '../pages/Dinner';
 import Dessert from '../pages/Dessert';
 import Snack from '../pages/Snack';
 import SingleRecipe from '../pages/SingleRecipe';
+import EditRecipe from '../pages/EditRecipe';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -44,7 +44,7 @@ class App extends React.Component {
             <ProtectedRoute path="/snacks" component={Snack}/>
             <ProtectedRoute path="/breakfast" component={Breakfast}/>
             <ProtectedRoute path="/lunch" component={Lunch}/>
-            <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+            <ProtectedRoute path="/editrecipe/:_id" component={EditRecipe}/>
             <AdminProtectedRoute path="/admin" component={Admin}/>
             <Route component={NotFound}/>
           </Switch>
