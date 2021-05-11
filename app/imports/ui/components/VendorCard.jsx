@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Icon, Image, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import UserComment from './UserComment';
 import AddComment from '../pages/AddComment';
 
@@ -10,6 +10,9 @@ class VendorCard extends React.Component {
   render() {
     return (
       <Card centered>
+        <Card.Content extra>
+          <Link to={`/editvendor/${this.props.vendor._id}`}>Edit</Link>
+        </Card.Content>
         <Card.Content>
           <Image
             floated='right'
