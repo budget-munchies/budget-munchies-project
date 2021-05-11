@@ -6,7 +6,7 @@ import UserComment from './UserComment';
 import AddComment from '../pages/AddComment';
 
 /** Renders a single vendor. See pages/ListVendors.jsx. */
-class Vendor extends React.Component {
+class VendorCard extends React.Component {
   render() {
     return (
       <Card centered>
@@ -49,10 +49,10 @@ class Vendor extends React.Component {
 }
 
 // Require a document to be passed to this component.
-Vendor.propTypes = {
+VendorCard.propTypes = {
   vendor: PropTypes.object.isRequired,
   comment: PropTypes.array.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
-export default withRouter(Vendor);
+export default withRouter(VendorCard);
