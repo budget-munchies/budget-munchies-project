@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, Image, Icon, Button, Label } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
 import { Favorites } from '../../api/favorite/Favorite';
 import { Recipes } from '../../api/recipe/Recipe';
 
@@ -12,7 +12,7 @@ class RecipeCard extends React.Component {
   handleClick = () => this.updateLikes(this.props.recipe._id);
 
   updateLikes = (docID) => {
-    if ((_.find(this.props.favorites, function (fav) { return fav.recipeId === docID; })) === undefined) {
+    if (this.props.favorites.find(favorite => (favorite.recipeId === docID)) === undefined) {
       Favorites.collection.insert({ recipeId: docID, owner: this.props.recipe.owner });
       Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes + 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
@@ -62,4 +62,18 @@ RecipeCard.propTypes = {
   favorites: PropTypes.array.isRequired,
 };
 
-export default withRouter(RecipeCard);
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Recipes.userPublicationName);
+  const subscription2 = Meteor.subscribe(Favorites.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready() && subscription2.ready();
+  // Get the Stuff documents
+  const recipes = Recipes.collection.find({}).fetch();
+  const favorites = Favorites.collection.find({}).fetch();
+  return {
+    recipes,
+    ready,
+    favorites,
+  };
+})(RecipeCard);
