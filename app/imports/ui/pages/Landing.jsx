@@ -35,6 +35,15 @@ class Landing extends React.Component {
               </Header>
             </Grid.Row>
             <br/>
+            <br/>
+            <Grid.Row>
+              <Icon name={'shopping cart'} size={'big'} style={lightColor}/>
+              <Header as={'h2'} style={lightColor}> Explore Vendors </Header>
+              <Header as={'h4'} style={lightColor}> Students are able to see stores, local shops, and pop-ups that
+                <br/> sell any ingredients used or cheap eats.
+              </Header>
+            </Grid.Row>
+            <br/>
           </Grid.Column>
           <Grid.Column id={'right-landing'}>
             <Header as={'h1'} style={midColor} textAlign='center'>Best of This Week</Header>
