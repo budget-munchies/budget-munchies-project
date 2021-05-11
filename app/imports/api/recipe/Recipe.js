@@ -48,6 +48,7 @@ class RecipesCollection {
     // Define names for publications and subscriptions
     this.userPublicationName = `${this.name}.publication.user`;
     this.adminPublicationName = `${this.name}.publication.admin`;
+    this.worldPublicationName = `${this.name}.publication.world`;
   }
 }
 
