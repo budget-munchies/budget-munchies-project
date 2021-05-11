@@ -188,7 +188,8 @@
       "dietRestriction": "Vegan",
       "owner": "mary@foo.com"
     },
-    { "title": "Chocolate Mousse",
+    {
+      "title": "Chocolate Mousse",
       "image": "https://cdn.pratico-pratiques.com/app/uploads/sites/2/2018/08/27235937/verrines-de-mousse-au-chocolat.jpeg",
       "date": "Sat Apr 30 2021 00:23:54 GMT-1000 (Hawaii-Aleutian Standard Time)",
       "description": "Decadent and easy chocolate mousse",
@@ -208,5 +209,40 @@
       "mealType": "Dessert",
       "equipment": "Oven",
       "dietRestrictions": "Vegetarian" }
+  ],
+
+  "defaultVendors": [
+    {
+      "name": "Nijiya Market",
+      "image": "https://readwasabi.com/assets/images/nijiya2-227x194.jpg",
+      "address": "1009 University Ave #101, Honolulu, HI 96826",
+      "description": "This is Budget Munchies member Marissa's favorite place to shop for groceries because it's only a 6 minute walk from campus. She especially enjoys browsing their drink and snack aisles. Nijiya Market sells Japanese cuisine and spares no effort in seeking higher quality food that is good for the body and good tasting.",
+      "link": "https://www.nijiya.com/",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Safeway",
+      "image": "https://mma.prnewswire.com/media/147279/safeway_logo.jpg?p=publish",
+      "address": "2855 E Manoa Rd, Honolulu, HI 96822",
+      "description": "This is Budget Munchies member Sydney's favorite place to shop for groceries. It's not only close to her home but it's also in walking distance from the UH Manoa campus. The best part about Safeway is that it's open 24 hours! They boast full, fresh, fast, friendly & clean stores, offer the highest quality fresh foods available, and legendary customer service.",
+      "link": "https://local.safeway.com/safeway/hi/honolulu/2855-e-manoa-rd.html?utm_source=G&utm_medium=Maps&utm_campaign=G+Places",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Foodland",
+      "image": "https://pbs.twimg.com/profile_images/378800000150118617/ec6ff40ef5c02568ac4f3966f6ba5f82_400x400.jpeg",
+      "address": "2939 Harding Ave, Honolulu, HI 96816",
+      "description": "This is Budget Munchies member Nanami's favorite place to shop for groceries as it has a wide variety of options and there are frequent sales. She really likes that they now offer Curbside Pickup and Delivery. Foodland is Hawaii's largest locally owned and operated grocery retailer. ",
+      "link": "https://www.foodland.com/stores/foodland-market-city",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Down To Earth Organic & Natural Honolulu",
+      "image": "https://www.naturalfoodretailers.net/sites/default/files/styles/member_logo/public/member_logo/Down%20to%20Earth_0.jpg?itok=xuaZsfM0",
+      "address": "2525 S King St, Honolulu, HI 96826",
+      "description": "This is Budget Munchies member Kieran's favorite place to shop for groceries. There are many different fresh options each week and the prices are reasonable. It offers a variety of natural and organic foods and groceries including dairy products, local organic produce, bulk foods, vitamins and natural supplements, body care products, and household items.",
+      "link": "https://www.downtoearth.org/our-stores/store-locations/honolulu-oahu",
+      "owner": "admin@foo.com"
+    }
   ]
 }

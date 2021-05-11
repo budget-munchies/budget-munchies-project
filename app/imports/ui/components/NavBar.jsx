@@ -15,9 +15,7 @@ class NavBar extends React.Component {
           <Header as='h1' className='text'>Budget Munchies</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="" exact to="/" className='text' key='home'>Home</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>My Recipes</Menu.Item>,
+          [
             <Menu.Item key='dropdown'>
               <Dropdown pointing text='Browse Recipes' className='text'>
                 <Dropdown.Menu id='dropdown'>
@@ -29,10 +27,20 @@ class NavBar extends React.Component {
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>My Recipes</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/vendors" key='vendors' className='text'>Vendors</Menu.Item>,
             <Menu.Item key='search' position="right"><Input icon='search' placeholder='Find a Recipe'/></Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin' className='text'>Admin</Menu.Item>
+          <Menu.Item key='dropdown'>
+            <Dropdown pointing text='Admin Features'>
+              <Dropdown.Menu id='dropdown'>
+                <Dropdown.Item as={NavLink} activeClassName="active" exact to="/allrecipes" key='allrecipes' text='All Recipes' />
+                <Dropdown.Item as={NavLink} activeClassName="active" exact to="/addvendor" key='addvendor' text='Add Vendor' />
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu.Item>
         ) : ''}
         <Menu.Item className='text'>
           {this.props.currentUser === '' ? (
