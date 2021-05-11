@@ -75,7 +75,7 @@ RecipeItem.propTypes = {
 
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe(Recipes.adminPublicationName);
+  const subscription = Meteor.subscribe(Recipes.userPublicationName);
   const subscription2 = Meteor.subscribe(Favorites.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() && subscription2.ready();
