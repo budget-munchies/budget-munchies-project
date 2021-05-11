@@ -18,10 +18,11 @@ class RecipeCard extends React.Component {
         swal('Error', error.message, 'error') :
         swal('Success', 'Like added successfully', 'success')));
     } else {
+      const fav = this.props.favorites.find(favorite => (favorite.recipeId === docID))._id;
       Recipes.collection.update(docID, { $set: { likes: this.props.recipe.likes - 1 } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Like removed successfully', 'success')));
-      Favorites.collection.remove({ recipeId: docID });
+      Favorites.collection.remove(fav);
     }
   };
 
