@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Card, Image, Icon } from 'semantic-ui-react';
+import { Grid, Header, Card, Image, Icon, Loader } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -10,6 +10,10 @@ import { Recipes } from '../../api/recipe/Recipe';
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting Recipes</Loader>;
+  }
+
+  renderPage() {
     const midColor = { color: '#95AFC9' };
     const lightColor = { color: '#E3EEFA' };
     const imgheight = { height: '200px' };
@@ -62,6 +66,7 @@ class Landing extends React.Component {
 
 Landing.propTypes = {
   recipes: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
 export default withTracker(() => {
