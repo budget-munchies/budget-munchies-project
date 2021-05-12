@@ -57,9 +57,12 @@ class NavBar {
     await testController.click('#navbar-add-recipe');
   }
 
-  /** sign in and go to admin page */
+  /** sign in and go to admin features */
   async gotoAdminPage(testController) {
-    await testController.click('#navbar-admin');
+    await testController.click('#navbar-admin-dropdown');
+    await testController.click('#navbar-admin-dropdown-all-recipes');
+    await testController.click('#navbar-admin-dropdown');
+    await testController.click('#navbar-admin-dropdown-add-vendor');
   }
 }
 export const navBar = new NavBar();
