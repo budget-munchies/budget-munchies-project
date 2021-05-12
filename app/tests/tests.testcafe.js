@@ -36,7 +36,7 @@ test('Test the Add Recipe page', async (testController) => {
   await addRecipePage.isDisplayed(testController);
 });
 
-test.skip('Test the List Recipe page', async (testController) => {
+test('Test the List Recipe page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListRecipesPage(testController);
@@ -46,7 +46,7 @@ test.skip('Test the List Recipe page', async (testController) => {
 test.skip('Test the breakfast page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
-  await navBar.gotoBrowseRecipePage(testController);
+  await navBar.gotoBreakfastPage(testController);
   await breakfastPage.isDisplayed(testController);
 });
 

@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 
 class BreakfastPage {
   constructor() {
-    this.pageId = '#breakfast-page';
+    this.pageId = '#navbar-dropdown-breakfast';
     this.pageSelector = Selector(this.pageId);
   }
 

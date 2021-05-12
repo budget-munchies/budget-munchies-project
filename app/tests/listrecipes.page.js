@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 
 class ListRecipesPage {
   constructor() {
-    this.pageId = '#list-recipes-page';
+    this.pageId = '#navbar-list-recipes';
     this.pageSelector = Selector(this.pageId);
   }
 

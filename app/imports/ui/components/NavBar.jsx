@@ -20,7 +20,7 @@ class NavBar extends React.Component {
             <Menu.Item key='dropdown'>
               <Dropdown pointing text='Browse Recipes' className='text'>
                 <Dropdown.Menu id='dropdown'>
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/breakfast" key='breakfast' text='Breakfast' />
+                  <Dropdown.Item id="navbar-dropdown-breakfast" as={NavLink} activeClassName="active" exact to="/breakfast" key='breakfast' text='Breakfast' />
                   <Dropdown.Item as={NavLink} activeClassName="active" exact to="/lunch" key='lunch' text='Lunch' />
                   <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dinner" key='dinner' text='Dinner' />
                   <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dessert" key='dessert' text='Dessert' />
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
               </Dropdown>
             </Menu.Item>,
             <Menu.Item id='navbar-add-recipe' as={NavLink} activeClassName="active" exact to="/add" key='add' className='text'>Add Recipes</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>My Recipes</Menu.Item>,
+            <Menu.Item id= 'navbar-list-recipes' as={NavLink} activeClassName="active" exact to="/list" key='list' className='text'>My Recipes</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/vendors" key='vendors' className='text'>Vendors</Menu.Item>,
           ]
         ) : ''}
