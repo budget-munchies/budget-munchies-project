@@ -44,7 +44,7 @@ test('Test the List Recipe page', async (testController) => {
   await listRecipesPage.isDisplayed(testController);
 });
 
-test('Test the List Vendors page', async (testController) => {
+test.skip('Test the List Vendors page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListVendorsPage(testController);
