@@ -80,6 +80,13 @@ class NavBar {
     await testController.click('#login-dropdown-profile');
   }
 
+  /** favorites */
+  async gotoFavoriteRecipesPage(testController) {
+    await testController.expect(Selector('#navbar-current-user').exists).ok();
+    await testController.click('#navbar-current-user');
+    await testController.click('#login-dropdown-favorites');
+  }
+
   /** sign in and go to admin features */
   async gotoAdminPage(testController) {
     await testController.click('#navbar-admin-dropdown');

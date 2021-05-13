@@ -9,6 +9,7 @@ import { breakfastPage } from './breakfast.page';
 import { listRecipesPage } from './listrecipes.page';
 import { userPagePage } from './userpage.page';
 import { listVendorsPage } from './listvendors.page';
+import { favoriteRecipesPage } from './favoriterecipes.page';
 
 /* global fixture:false, test:false */
 
@@ -62,6 +63,16 @@ test('Test the User Profile page', async (testController) => {
   await navBar.gotoUserPagePage(testController);
   await userPagePage.isDisplayed(testController);
 });
+
+/* favorites page test */
+test('Test the favorites page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoFavoriteRecipesPage(testController);
+  await favoriteRecipesPage.isDisplayed(testController);
+});
+
 /* meal pages test */
 test.skip('Test the breakfast page', async (testController) => {
   await navBar.gotoSigninPage(testController);
