@@ -62,6 +62,11 @@ class NavBar {
     await testController.click('#navbar-list-recipes');
   }
 
+  /** Pull down login menu, go to listvendors page. */
+  async gotoListVendorsPage(testController) {
+    await testController.click('#navbar-list-vendors');
+  }
+
   /** Pull down menu, go to breakfast page. */
   async gotoBreakfastPage(testController) {
     await testController.click('#navbar-dropdown');
@@ -69,10 +74,10 @@ class NavBar {
   }
 
   /** user page */
-  async gotoUserPage(testController) {
-    await testController.expect(Selector('#navbar-current-user').exists).ok();
+  async gotoUserPagePage(testController) {
     await testController.click('#navbar-current-user');
-    await testController.click('#navbar-dropdown-profile');
+    await testController.click('#login-dropdown');
+    await testController.click('#login-dropdown-profile');
   }
 
   /** sign in and go to admin features */
