@@ -37,17 +37,17 @@ class NavBar {
     await testController.click('#login-dropdown-sign-up');
   }
 
-  /** Pull down login menu, go to AddStuff page. */
+  /** go to AddRecipe page. */
   async gotoAddRecipePage(testController) {
     await testController.click('#navbar-add-recipe');
   }
 
-  /** Pull down login menu, go to listrecipes page. */
+  /** go to listrecipes page. */
   async gotoListRecipesPage(testController) {
     await testController.click('#navbar-list-recipes');
   }
 
-  /** Pull down login menu, go to listvendors page. */
+  /** go to listvendors page. */
   async gotoListVendorsPage(testController) {
     await testController.click('#navbar-list-vendors');
   }
@@ -73,14 +73,14 @@ class NavBar {
     await testController.click('#navbar-dropdown-dinner');
   }
 
-  /** Pull down menu, go to lunch page. */
+  /** Pull down menu, go to desserts page. */
   async gotoDessertPage(testController) {
     await testController.expect(Selector('#navbar-user-dropdown').exists).ok();
     await testController.click('#navbar-user-dropdown');
     await testController.click('#navbar-dropdown-dessert');
   }
 
-  /** Pull down menu, go to lunch page. */
+  /** Pull down menu, go to snacks page. */
   async gotoSnackPage(testController) {
     await testController.expect(Selector('#navbar-user-dropdown').exists).ok();
     await testController.click('#navbar-user-dropdown');

@@ -51,7 +51,7 @@ test('Test the List Recipe page', async (testController) => {
   await listRecipesPage.isDisplayed(testController);
 });
 
-/* List recipe page test */
+/* List vendors page test */
 test('Test the List Vendors page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
@@ -117,6 +117,7 @@ test('Test the snack page', async (testController) => {
   await snackPage.isDisplayed(testController);
 });
 
+/* admin features test */
 test('Test the admin features', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, adCredentials.username, adCredentials.password);
