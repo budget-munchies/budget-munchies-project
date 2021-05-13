@@ -75,8 +75,8 @@ class NavBar {
 
   /** user page */
   async gotoUserPagePage(testController) {
+    await testController.expect(Selector('#navbar-current-user').exists).ok();
     await testController.click('#navbar-current-user');
-    await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-profile');
   }
 

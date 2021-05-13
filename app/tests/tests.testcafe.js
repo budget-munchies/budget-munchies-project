@@ -55,9 +55,10 @@ test('Test the List Vendors page', async (testController) => {
 });
 
 /* user profile page test */
-test.skip('Test the User Profile page', async (testController) => {
+test('Test the User Profile page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
   await navBar.gotoUserPagePage(testController);
   await userPagePage.isDisplayed(testController);
 });
