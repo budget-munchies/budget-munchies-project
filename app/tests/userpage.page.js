@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class listVendorsPage {
+class UserPagePage {
   constructor() {
-    this.pageId = '#navbar-list-vendors';
+    this.pageId = '#login-dropdown-profile';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -13,4 +13,4 @@ class listVendorsPage {
   }
 }
 
-export const listVendorsPage = new ListVendorsPage();
+export const userPagePage = new UserPagePage();
