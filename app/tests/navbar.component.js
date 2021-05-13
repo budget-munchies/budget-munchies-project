@@ -74,6 +74,34 @@ class NavBar {
     await testController.click('#navbar-dropdown-breakfast');
   }
 
+  /** Pull down menu, go to lunch page. */
+  async gotoLunchPage(testController) {
+    await testController.expect(Selector('#navbar-user-dropdown').exists).ok();
+    await testController.click('#navbar-user-dropdown');
+    await testController.click('#navbar-dropdown-lunch');
+  }
+
+  /** Pull down menu, go to lunch page. */
+  async gotoDinnerPage(testController) {
+    await testController.expect(Selector('#navbar-user-dropdown').exists).ok();
+    await testController.click('#navbar-user-dropdown');
+    await testController.click('#navbar-dropdown-dinner');
+  }
+
+  /** Pull down menu, go to lunch page. */
+  async gotoDessertPage(testController) {
+    await testController.expect(Selector('#navbar-user-dropdown').exists).ok();
+    await testController.click('#navbar-user-dropdown');
+    await testController.click('#navbar-dropdown-dessert');
+  }
+
+  /** Pull down menu, go to lunch page. */
+  async gotoSnackPage(testController) {
+    await testController.expect(Selector('#navbar-user-dropdown').exists).ok();
+    await testController.click('#navbar-user-dropdown');
+    await testController.click('#navbar-dropdown-snacks');
+  }
+
   /** user page */
   async gotoUserPagePage(testController) {
     await testController.expect(Selector('#navbar-current-user').exists).ok();

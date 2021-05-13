@@ -21,10 +21,10 @@ class NavBar extends React.Component {
               <Dropdown id="navbar-user-dropdown" pointing text='Browse Recipes' className='text'>
                 <Dropdown.Menu id='dropdown'>
                   <Dropdown.Item id="navbar-dropdown-breakfast" as={NavLink} activeClassName="active" exact to="/breakfast" key='breakfast' text='Breakfast' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/lunch" key='lunch' text='Lunch' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dinner" key='dinner' text='Dinner' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/dessert" key='dessert' text='Dessert' />
-                  <Dropdown.Item as={NavLink} activeClassName="active" exact to="/snacks" key='snacks' text='Snacks' />
+                  <Dropdown.Item id="navbar-dropdown-lunch" as={NavLink} activeClassName="active" exact to="/lunch" key='lunch' text='Lunch' />
+                  <Dropdown.Item id="navbar-dropdown-dinner" as={NavLink} activeClassName="active" exact to="/dinner" key='dinner' text='Dinner' />
+                  <Dropdown.Item id="navbar-dropdown-dessert" as={NavLink} activeClassName="active" exact to="/dessert" key='dessert' text='Dessert' />
+                  <Dropdown.Item id="navbar-dropdown-snacks" as={NavLink} activeClassName="active" exact to="/snacks" key='snacks' text='Snacks' />
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,

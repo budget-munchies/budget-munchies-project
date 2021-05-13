@@ -10,6 +10,10 @@ import { listRecipesPage } from './listrecipes.page';
 import { userPagePage } from './userpage.page';
 import { listVendorsPage } from './listvendors.page';
 import { favoriteRecipesPage } from './favoriterecipes.page';
+import { lunchPage } from './lunch.page';
+import { dinnerPage } from './dinner.page';
+import { dessertPage } from './dessert.page';
+import { snackPage } from './snack.page';
 
 /* global fixture:false, test:false */
 
@@ -79,6 +83,38 @@ test('Test the breakfast page', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoBreakfastPage(testController);
   await breakfastPage.isDisplayed(testController);
+});
+
+/* meal pages test */
+test('Test the lunch page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoLunchPage(testController);
+  await lunchPage.isDisplayed(testController);
+});
+
+/* meal pages test */
+test('Test the dinner page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoDinnerPage(testController);
+  await dinnerPage.isDisplayed(testController);
+});
+
+/* meal pages test */
+test('Test the dessert page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoDessertPage(testController);
+  await dessertPage.isDisplayed(testController);
+});
+
+/* meal pages test */
+test('Test the snack page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoSnackPage(testController);
+  await snackPage.isDisplayed(testController);
 });
 
 test('Test the admin features', async (testController) => {
