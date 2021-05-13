@@ -7,6 +7,7 @@ import { allRecipesPage } from './allrecipes.page';
 import { addVendorPage } from './addvendor.page';
 import { breakfastPage } from './breakfast.page';
 import { listRecipesPage } from './listrecipes.page';
+import { listVendorsPage } from './listvendors.page';
 
 /* global fixture:false, test:false */
 
@@ -41,6 +42,13 @@ test('Test the List Recipe page', async (testController) => {
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListRecipesPage(testController);
   await listRecipesPage.isDisplayed(testController);
+});
+
+test('Test the List Vendors page', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoListVendorsPage(testController);
+  await listVendorsPage.isDisplayed(testController);
 });
 
 test.skip('Test the breakfast page', async (testController) => {

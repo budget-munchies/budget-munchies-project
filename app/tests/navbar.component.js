@@ -62,6 +62,11 @@ class NavBar {
     await testController.click('#navbar-list-recipes');
   }
 
+  /** Pull down login menu, go to liststuff page. */
+  async gotoListVendorsPage(testController) {
+    await testController.click('#navbar-list-vendors');
+  }
+
   /** Pull down menu, go to breakfast page. */
   async gotoBreakfastPage(testController) {
     await testController.click('#navbar-dropdown');
