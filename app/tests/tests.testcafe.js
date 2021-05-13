@@ -17,11 +17,12 @@ const adCredentials = { username: 'admin@foo.com', password: 'changeme' };
 
 fixture('budget-munchies-project localhost test with default db')
   .page('http://localhost:3000');
-
+/* Landing page test */
 test('Test that landing page shows up', async (testController) => {
   await landingPage.isDisplayed(testController);
 });
-
+/* sign in page test */
+/* sign out page test */
 test('Test that signin and signout work', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
@@ -29,28 +30,28 @@ test('Test that signin and signout work', async (testController) => {
   await navBar.logout(testController);
   await signoutPage.isDisplayed(testController);
 });
-
+/* add recipe page test */
 test('Test the Add Recipe page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoAddRecipePage(testController);
   await addRecipePage.isDisplayed(testController);
 });
-
+/* List recipe page test */
 test('Test the List Recipe page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoListRecipesPage(testController);
   await listRecipesPage.isDisplayed(testController);
 });
-
+/* user profile page test */
 test.skip('Test the User Profile page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoUserPagePage(testController);
   await userPagePage.isDisplayed(testController);
 });
-
+/* meal pages test */
 test.skip('Test the breakfast page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
