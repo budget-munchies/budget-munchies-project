@@ -37,21 +37,6 @@ class NavBar {
     await testController.click('#login-dropdown-sign-up');
   }
 
-  /** Pull down login menu, go to ListStuff page. */
-  async gotoListStuffPage(testController) {
-    await testController.click('#navbar-list-stuff');
-  }
-
-  /** Pull down login menu, go to AddStuff page. */
-  async gotoAddStuffPage(testController) {
-    await testController.click('#navbar-add-stuff');
-  }
-
-  /** Pull down login menu, go to EditStuff page. */
-  async gotoEditStuffPage(testController) {
-    await testController.click('#navbar-edit-stuff');
-  }
-
   /** Pull down login menu, go to AddStuff page. */
   async gotoAddRecipePage(testController) {
     await testController.click('#navbar-add-recipe');
