@@ -69,7 +69,8 @@ class NavBar {
 
   /** Pull down menu, go to breakfast page. */
   async gotoBreakfastPage(testController) {
-    await testController.click('#navbar-dropdown');
+    await testController.expect(Selector('#navbar-user-dropdown').exists).ok();
+    await testController.click('#navbar-user-dropdown');
     await testController.click('#navbar-dropdown-breakfast');
   }
 

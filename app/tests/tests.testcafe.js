@@ -74,7 +74,7 @@ test('Test the favorites page', async (testController) => {
 });
 
 /* meal pages test */
-test.skip('Test the breakfast page', async (testController) => {
+test('Test the breakfast page', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.gotoBreakfastPage(testController);

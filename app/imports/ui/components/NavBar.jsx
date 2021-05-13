@@ -18,7 +18,7 @@ class NavBar extends React.Component {
         {this.props.currentUser ? (
           [
             <Menu.Item key='dropdown'>
-              <Dropdown pointing text='Browse Recipes' className='text'>
+              <Dropdown id="navbar-user-dropdown" pointing text='Browse Recipes' className='text'>
                 <Dropdown.Menu id='dropdown'>
                   <Dropdown.Item id="navbar-dropdown-breakfast" as={NavLink} activeClassName="active" exact to="/breakfast" key='breakfast' text='Breakfast' />
                   <Dropdown.Item as={NavLink} activeClassName="active" exact to="/lunch" key='lunch' text='Lunch' />
